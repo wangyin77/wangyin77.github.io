@@ -34,10 +34,10 @@ theme:
   name: material
   static_templates:
     - 404.html
-  language: 'en'
-#  palette:
-#    primary: 'Blue Grey'
-#    accent: 'Pink'
+  language: 'zh'
+  palette:
+    primary: 'Blue Grey'
+    accent: 'Pink'
   include_search_page: false
   search_index_only: false
 
