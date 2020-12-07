@@ -1,166 +1,114 @@
-# Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
-
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to
-# deal in the Software without restriction, including without limitation the
-# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-# sell copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-# IN THE SOFTWARE.
-
-# Project information
+# Project Information
 site_name: 心水 - wy 笔记
-site_url: https://github.com/wangyin77/blog
-site_author: w'y
 site_description: wy的个人博客
-
-# Repository
-repo_name: wangyin77/blog
-repo_url: https://github.com/wangyin77/blog
-edit_uri: ""
+site_author: wy
+site_url: https://wy20.ml
+#strict: true
 
 # Copyright
-copyright: Copyright &copy; 2016 - 2020 Martin Donath
+copyright: 'Copyright &copy; 2020 - 2020 WY'
 
-# Configuration
+# Repository
+#repo_name: 'cyent/markdown-with-mkdocs-material'
+#repo_url: 'https://github.com/cyent/markdown-with-mkdocs-material'
+
+# Contents
+nav:
+  - Home: index.md
+  - Basic Lessons: 
+    - 1. 基础算法: 第一讲 基础算法.md
+    - 2. 数据结构: 第二讲 数据结构.md
+    - 3. 搜索与图论: 第三讲 搜索与图论.md
+  - Leetcode:
+    - lc/Leetcode_1. 两数之和.md
+    - lc/Leetcode_2. 两数相加.md
+    - lc/Leetcode_3. 无重复字符的最长子串.md
+    - lc/Leetcode_4. 寻找两个正序数组的中位数.md
+    - lc/Leetcode_5. 最长回文子串.md
+    - lc/Leetcode_6. Z 字形变换.md
+    - lc/Leetcode_7. 整数反转.md
+    - lc/Leetcode_8. 字符串转换整数 (atoi).md
+    - lc/Leetcode_9. 回文数.md 
+    - lc/Leetcode_10. 正则表达式匹配.md
+    - lc/Leetcode_31. 下一个排列.md
+    - lc/Leetcode_32. 最长有效括号.md
+    - lc/Leetcode_33. 搜索旋转排序数组.md
+    - lc/Leetcode_34. 在排序数组中查找元素的第一个和最后一个位置.md
+    - lc/Leetcode_35. 搜索插入位置.md
+
+# Theme
 theme:
-  name: null
-  custom_dir: material
-
-  # 404 page
+  name: material
   static_templates:
     - 404.html
-
-  # Don't include MkDocs' JavaScript
+  language: 'zh'
+  palette:
+    primary: 'white'
+    accent: 'red'
   include_search_page: false
   search_index_only: true
 
-  # Default values, taken from mkdocs_theme.yml
-  language: en
-  features:
-    - navigation.tabs
-    #- navigation.instant
-  palette:
-    scheme: default
-    primary: indigo
-    accent: indigo
+  logo:
+    icon: 'school'
+  feature:
+    tabs: true
   font:
-    text: Roboto
-    code: Roboto Mono
-  favicon: assets/favicon.png
-  icon:
-    logo: logo
+    text: 'Fira Sans'
+    code: 'Fira Mono'
 
-# Plugins
-plugins:
-  - search
-  - redirects:
-      redirect_maps:
-        extensions/admonition.md: reference/admonitions.md
-        extensions/codehilite.md: reference/code-blocks.md
-        extensions/footnotes.md: reference/footnotes.md
-        extensions/metadata.md: reference/meta-tags.md
-        extensions/permalinks.md: setup/setting-up-navigation.md #permalink
-        extensions/pymdown.md: reference/admonitions.md
-        plugins/revision-date.md: setup/adding-a-git-repository.md #revision-date
-        plugins/search.md: setup/setting-up-site-search.md
-        releases/4.md: upgrading.md #upgrading-from-4x-to-5x
-        releases/5.md: upgrading.md #upgrading-from-3x-to-4x
-        releases/changelog.md: changelog.md
-        setup/adding-social-links.md: setup/setting-up-the-footer.md
-        sponsorship.md: insiders.md
-  - minify:
-      minify_html: true
+#
+#  name: material
+#  palette:
+#    primary: 'Blue Grey'
+#    accent: 'Pink'
+#  feature:
+#    tabs: true
+##    - tabs
+##    - instant
+#  font:
+##    text: 'Ubuntu'
+##    code: 'Ubuntu Mono'
+#  language: 'zh'
 
-# Customization
 extra:
   social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/wangyin77/blog
-    - icon: fontawesome/brands/gitter
-      link: https://gitter.im/squidfunk/mkdocs-material
-    - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/squidfunk
-    - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/squidfunk/
-    - icon: fontawesome/brands/instagram
-      link: https://instagram.com/squidfunk
+#    - type: github  
+#      link: https://github.com/wangyin77
+  search:
+    language: 'jp'
 
-# Extensions
 markdown_extensions:
   - admonition
-  - abbr
-  - attr_list
-  - def_list
-  - footnotes
-  - meta
+  - codehilite:
+      guess_lang: false
+      linenums: false
   - toc:
       permalink: true
-  - pymdownx.arithmatex:
-      generic: true
+  - footnotes
+  - meta
+  - def_list
+  - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.highlight
+      emoji_generator: !!python/name:pymdownx.emoji.to_png
+      #emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      #emoji_generator: !!python/name:pymdownx.emoji.to_png_sprite
+      #emoji_generator: !!python/name:pymdownx.emoji.to_svg_sprite
+      #emoji_generator: !!python/name:pymdownx.emoji.to_awesome
+      #emoji_generator: !!python/name:pymdownx.emoji.to_alt
   - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.magiclink:
-      repo_url_shorthand: true
-      user: squidfunk
-      repo: mkdocs-material
+  - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.snippets:
-      check_paths: true
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed
-  - pymdownx.tasklist:
-      custom_checkbox: true
+  - pymdownx.superfences
+  - pymdownx.tasklist
   - pymdownx.tilde
 
-# Page tree
-nav:
-  - Home: 
-    - Intro: index.md
-  - Basic: 
-    - 第一讲 基础算法: basic/basic_algorithm.md
-    - 第二讲 数据结构: basic/data structure.md
-    - 第三讲 搜索与图论: basic/search.md
-  - Leetcode:
-    - Leetcode_1. 两数之和: lc/Leetcode_1.md
-    - Leetcode_2. 两数相加: lc/Leetcode_2.md
-    - Leetcode_3. 无重复字符的最长子串: lc/Leetcode_3.md
-    - Leetcode_4. 寻找两个正序数组的中位数: lc/Leetcode_4.md
-    - Leetcode_5. 最长回文子串: lc/Leetcode_5.md
-    - Leetcode_6. Z 字形变换: lc/Leetcode_6.md
-    - Leetcode_7. 整数反转: lc/Leetcode_7.md
-    - Leetcode_8. 字符串转换整数 (atoi): lc/Leetcode_8.md
-    - Leetcode_9. 回文数: lc/Leetcode_9.md
-    - Leetcode_10. 正则表达式匹配: lc/Leetcode_10.md
-    - Leetcode_31. 下一个排列: lc/Leetcode_31.md
-    - Leetcode_32. 最长有效括号: lc/Leetcode_32.md
-    - Leetcode_33. 搜索旋转排序数组: lc/Leetcode_33.md
-    - Leetcode_34. 在排序数组中查找元素的第一个和最后一个位置: lc/Leetcode_34.md
-    - Leetcode_35. 搜索插入位置: lc/Leetcode_35.md
-
+#extra_javascript:
+#  - 'js/extra.js'
+#  - 'js/baidu-tongji.js'
+#  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
