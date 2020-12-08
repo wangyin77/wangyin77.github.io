@@ -6,8 +6,7 @@ site_url: https://jlwy.ml
 
 # Contents
 nav:
-  - Home: 
-    - Intro: index.md
+  - Home: index.md
   - Basic: 
     - 第一讲 基础算法: basic/basic_algorithm.md
     - 第二讲 数据结构: basic/data structure.md
