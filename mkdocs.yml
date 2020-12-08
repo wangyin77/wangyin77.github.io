@@ -62,7 +62,7 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/squidfunk
-  disqus: wy
+  disqus: wybi-ji
 
 # Extensions
 markdown_extensions:
