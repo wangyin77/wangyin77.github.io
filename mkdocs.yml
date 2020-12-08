@@ -47,7 +47,7 @@ theme:
   palette:
     scheme: slate
     primary: cyan
-    accent: pink
+    accent: yellow
   include_search_page: false
   search_index_only: false
 
@@ -73,7 +73,7 @@ markdown_extensions:
   - footnotes
   - meta
   - toc:
-      permalink: ⚓︎
+      permalink: true
       toc_depth: 0
   - pymdownx.arithmatex:
       generic: true
