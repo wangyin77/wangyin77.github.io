@@ -98,8 +98,6 @@ int main()
 
 题解页面：[__https://www.acwing.com/problem/content/solution/790/1/__](https://www.acwing.com/problem/content/solution/790/1/)
 
-![](https://tcs.teambition.net/storage/311z67b4fd6748e607470b876779454a26da?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXo2N2I0ZmQ2NzQ4ZTYwNzQ3MGI4NzY3Nzk0NTRhMjZkYSJ9.XazcZK_5J8CF0vJYHO1-2Q9wQpjnxTneSpUWqLF6b0E&download=image.png "")
-
 ```cpp
 #include <iostream>
 using namespace std;
@@ -137,8 +135,6 @@ int main()
 ## 5.[__数的范围__](https://www.acwing.com/problem/content/description/791/)
 
 进入：训练模式-基础知识-二分-789.数的范围
-
-![](https://tcs.teambition.net/storage/311z1b3ed9320e278f885a1ebea0817b2f01?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXoxYjNlZDkzMjBlMjc4Zjg4NWExZWJlYTA4MTdiMmYwMSJ9.Gw33SScIHT-o1Kd_A7NhlJs6e-a1TPmEFdOxmb-Mw0M&download=image.png "")
 
 ```cpp
 #include <iostream>
@@ -183,8 +179,6 @@ int main()
 
 进入：训练模式-基础知识-二分-790.数的三次方根
 
-![](https://tcs.teambition.net/storage/311zca66e63aa989301e357a6f9cfbf047be?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXpjYTY2ZTYzYWE5ODkzMDFlMzU3YTZmOWNmYmYwNDdiZSJ9.j0AG_bddTEVNje6mobwjBnHBTuhHQ-2GB_1-J40-4-0&download=image.png "")
-
 ```cpp
 #include<iostream>
 using namespace std;
@@ -206,9 +200,7 @@ int main(){
 
 进入：训练模式-基础知识-高精度-791.高精度加法
 
-题解页面：[__https://www.acwing.com/problem/content/solution/793/1/__](https://www.acwing.com/problem/content/solution/793/1/)
-
-![](https://tcs.teambition.net/storage/311z118ad644708e86faee2df938b361f707?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXoxMThhZDY0NDcwOGU4NmZhZWUyZGY5MzhiMzYxZjcwNyJ9.kyGoGR77bUdzjdULI2UCPRP9xJyw2MttRZLgdNtPC0Y&download=image.png "")
+题解页面：[__https://www.acwing.com/problem/content/solution/793/1/
 
 ```cpp
 #include <iostream>
@@ -307,9 +299,7 @@ int main()
 
 进入：训练模式-基础知识-高精度-792.高精度减法
 
-题解页面：[__https://www.acwing.com/problem/content/solution/794/1/__](https://www.acwing.com/problem/content/solution/794/1/)
-
-![](https://tcs.teambition.net/storage/311zc46e06e1386c9dec93a3118f1e1dd84d?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXpjNDZlMDZlMTM4NmM5ZGVjOTNhMzExOGYxZTFkZDg0ZCJ9.ltIRlWD8tlQSg1mAlacCJV8m7oAW7QTpOGY2cE-eabQ&download=image.png "")
+题解页面：[__https://www.acwing.com/problem/content/solution/794/1/
 
 ```cpp
 #include <iostream>
@@ -353,15 +343,11 @@ int main()
 }
 ```
 
-![](https://tcs.teambition.net/storage/311z9a9597c8b2331335eb9e94c88d8649fb?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXo5YTk1OTdjOGIyMzMxMzM1ZWI5ZTk0Yzg4ZDg2NDlmYiJ9.L-5-4PAFcGiLhWggIsyjjcDhles5WCKbgborT_G7cKw&download=image.png "")
-
 图中bug，没有写a[i] **- '0'**
 
 ## 9.高精度乘法（普通模式已锁）
 
 进入：训练模式-基础知识-高精度-793.高精度乘法
-
-![](https://tcs.teambition.net/storage/311zbc833ac13b9cc065e34b4fd7faf397bf?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXpiYzgzM2FjMTNiOWNjMDY1ZTM0YjRmZDdmYWYzOTdiZiJ9.10x1SmdBrD6iuYiMPafsCyg1uGRG4NLJ19IZDvL0lTU&download=image.png "")
 
 题解页面：[__https://www.acwing.com/problem/content/solution/795/1/__](https://www.acwing.com/problem/content/solution/795/1/)
 
@@ -396,13 +382,9 @@ int main()
 }
 ```
 
-![](https://tcs.teambition.net/storage/311z1b26bc0c938537cfed5ce4fc900e956f?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXoxYjI2YmMwYzkzODUzN2NmZWQ1Y2U0ZmM5MDBlOTU2ZiJ9.6cHjQEfp7IstjyaUIw3zkr1sZkh4eC2e_Fj1kR3ukyE&download=image.png "")
-
 ## 10.高精度除法（普通模式已锁）
 
 进入：训练模式-基础知识-高精度-794.高精度除法
-
-![](https://tcs.teambition.net/storage/311z1501af272359c83e7e18cd7e82f7dc2e?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXoxNTAxYWYyNzIzNTljODNlN2UxOGNkN2U4MmY3ZGMyZSJ9.Q9LFyrMzkWeJtkQAedSnDWniVWLojER3CX2Dmcem6v0&download=image.png "")
 
 题解页面：[__https://www.acwing.com/problem/content/solution/796/1/__](https://www.acwing.com/problem/content/solution/796/1/)
 
@@ -440,13 +422,9 @@ int main()
 }
 ```
 
-![](https://tcs.teambition.net/storage/311z8c3c7e6aff49fe921b92928ac3f514b8?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXo4YzNjN2U2YWZmNDlmZTkyMWI5MjkyOGFjM2Y1MTRiOCJ9.AoTKWzm9PrkVYo93YH7-EQNE6kSqDml3D7Daa53tNVc&download=image.png "")
-
 ## 11.前缀和（普通模式已锁）
 
 进入：训练模式-基础知识-前缀和与差分-795. 前缀和
-
-![](https://tcs.teambition.net/storage/311z3747dfb465a179f3a7e2a87fa1902764?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXozNzQ3ZGZiNDY1YTE3OWYzYTdlMmE4N2ZhMTkwMjc2NCJ9.cpbaJVoXobZYldUZkIUIMspfGWtcq5YU2MjZfuykIJQ&download=image.png "")
 
 题解页面：[__https://www.acwing.com/problem/content/solution/797/1/__](https://www.acwing.com/problem/content/solution/797/1/)
 
@@ -477,9 +455,7 @@ int main()
 
 进入：训练模式-基础知识-前缀和与差分-796. 子矩阵的和
 
-题解页面：[__https://www.acwing.com/problem/content/solution/798/1/__](https://www.acwing.com/problem/content/solution/798/1/)
-
-![](https://tcs.teambition.net/storage/311z0251c15f3c42da87041eee0ef1c77e4b?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXowMjUxYzE1ZjNjNDJkYTg3MDQxZWVlMGVmMWM3N2U0YiJ9.8G8NBtDquw1ZWTdDJUM9NelDZCVXe67OozrGsps5ykY&download=image.png "")
+题解页面：[__https://www.acwing.com/problem/content/solution/798/1/
 
 ```cpp
 #include <iostream>
@@ -507,8 +483,6 @@ int main()
 ```
 
 ## 13.[__差分__](https://www.acwing.com/problem/content/799/)
-
-![](https://tcs.teambition.net/storage/311z0d63ec589b1b7822afa16ec2f3493e40?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXowZDYzZWM1ODliMWI3ODIyYWZhMTZlYzJmMzQ5M2U0MCJ9.8SXwyo6cDL1SFRri2wI6bPVm16NTAoSHksyJFnVVLJc&download=sendpix3.jpg "")
 
 ```cpp
 #include <iostream>
@@ -565,8 +539,6 @@ int main(){
 
 进入：训练模式-基础知识-前缀和与差分-798. 差分矩阵
 
-![](https://tcs.teambition.net/storage/311z06eee3815cadf8f69b4f1b0c1bf15502?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXowNmVlZTM4MTVjYWRmOGY2OWI0ZjFiMGMxYmYxNTUwMiJ9.nsEGmVaFKQJPbMlv3FLM5Fi6hXN2zRYQDIepZC8UuEw&download=image.png "")
-
 题解界面：[__https://www.acwing.com/problem/content/solution/800/1/__](https://www.acwing.com/problem/content/solution/800/1/)
 
 ```cpp
@@ -615,8 +587,6 @@ int main()
 
 进入：训练模式-基础知识-双指针算法-799. 最长连续不重复子序列
 
-![](https://tcs.teambition.net/storage/311zc93538ef51a0dff7e65cba36939eb396?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXpjOTM1MzhlZjUxYTBkZmY3ZTY1Y2JhMzY5MzllYjM5NiJ9.DvmnfYKUXI1kfo-GVQl5PX6PpcBRz2rxShnP_70Ue_8&download=image.png "")
-
 题解页面：[__https://www.acwing.com/problem/content/solution/801/1/__](https://www.acwing.com/problem/content/solution/801/1/)
 
 ```cpp
@@ -645,8 +615,6 @@ int main()
 
 进入：训练模式-基础知识-双指针算法-800. 数组元素的目标和
 
-![](https://tcs.teambition.net/storage/311z4f6bf7415b7bdd935be98f5a6f72a9f1?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXo0ZjZiZjc0MTViN2JkZDkzNWJlOThmNWE2ZjcyYTlmMSJ9.pW0fV_V56maQntX22sFeyTycZ_qyEuPXyFM5mKdfOt4&download=image.png "")
-
 题解页面：[__https://www.acwing.com/problem/content/solution/802/1/__](https://www.acwing.com/problem/content/solution/802/1/)
 
 ```cpp
@@ -673,8 +641,6 @@ int main()
 
 进入：训练模式-基础知识-位运算-801. 二进制中1的个数
 
-![](https://tcs.teambition.net/storage/311z1d0734b3fd8e29428dfab8bf964becd3?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXoxZDA3MzRiM2ZkOGUyOTQyOGRmYWI4YmY5NjRiZWNkMyJ9.fIMhFhbqdcfaqZwvTgBefDXf6WXt0Qa_S7Zg1lcqds4&download=image.png "")
-
 题解页面：[__https://www.acwing.com/problem/content/solution/803/1/__](https://www.acwing.com/problem/content/solution/803/1/)
 
 ```cpp
@@ -700,8 +666,6 @@ int main()
 ## 18.区间和（普通模式已锁）
 
 进入：训练模式-基础知识-离散化-802. 离散化
-
-![](https://tcs.teambition.net/storage/311z932160070451e9be8bb088044fd85f57?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXo5MzIxNjAwNzA0NTFlOWJlOGJiMDg4MDQ0ZmQ4NWY1NyJ9.bKEChp2rJDIvkXTzdqOrAYK2yl3Td-3jIFSYw4ohMkE&download=image.png "")
 
 [__https://www.acwing.com/problem/content/solution/804/1/__](https://www.acwing.com/problem/content/solution/804/1/)
 
@@ -783,11 +747,7 @@ int main()
 
 进入：训练模式-基础知识-区间合并-803. 区间合并
 
-![](https://tcs.teambition.net/storage/311z8bc1583fd1fcc3b790a4b1f3d65a4e2f?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXo4YmMxNTgzZmQxZmNjM2I3OTBhNGIxZjNkNjVhNGUyZiJ9.HfOXxcgLg7Yk0MifsBlUl8xdhm9qnZVCLKeHScs13BI&download=image.png "")
-
 注意需要往下翻才能看到！
-
-![](https://tcs.teambition.net/storage/311z613dde982ede9186ccc551df2b1c5fc9?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXo2MTNkZGU5ODJlZGU5MTg2Y2NjNTUxZGYyYjFjNWZjOSJ9.QLxYJLRhsGuoOz_jUv-BBpMd8cY5uKWXEzrdqaPc7oI&download=image.png "")
 
 ```cpp
 #include <iostream>
@@ -826,7 +786,5 @@ int main()
     return 0;
 }
 ```
-
-![](https://tcs.teambition.net/storage/311z4d7613574108d950d96ea72d48fde180?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTA2OSwiaWF0IjoxNjA3MDcwMjY5LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXo0ZDc2MTM1NzQxMDhkOTUwZDk2ZWE3MmQ0OGZkZTE4MCJ9.-ZnM39YWLSRJzugAPKf9rMTE3kitn1-TzHC_7Xo_N7Q&download=image.png "")
 
 手速要求比较高,可以让merge返回结果,而不是把结果区间全存下来,只记个数,如上图.

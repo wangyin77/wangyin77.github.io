@@ -83,8 +83,6 @@ int main()
 
 进入：训练模式-搜索-最短路模型-844. 走迷宫
 
-![](https://tcs.teambition.net/storage/3120b41cfd8b7d1cd2b67e9c05c308bd1943?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI3NiwiaWF0IjoxNjA3MDcwNDc2LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMjBiNDFjZmQ4YjdkMWNkMmI2N2U5YzA1YzMwOGJkMTk0MyJ9.97J2hFgVDbbOYyGuNsaY5glVUpU7HDtpCUGGdtZYu2I&download=image.png "")
-
 题解页面：[__https://www.acwing.com/activity/content/problem/content/1650/1/__](https://www.acwing.com/activity/content/problem/content/1650/1/)
 
 ```cpp
@@ -146,12 +144,6 @@ int main()
 看题解：[__https://www.acwing.com/activity/content/problem/content/1653/1/__](https://www.acwing.com/activity/content/problem/content/1653/1/)
 
 这两道题也是dfs/bfs的模板题，跳过问题不大
-
-
-
-**【最短路问题】**
-
-![](https://tcs.teambition.net/storage/3120b889cc4733492fe178d48e78546da40f?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI3NiwiaWF0IjoxNjA3MDcwNDc2LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMjBiODg5Y2M0NzMzNDkyZmUxNzhkNDhlNzg1NDZkYTQwZiJ9.SARVXTxJwalwR_BkSxzE2x6lapRdK90sLU3KrTeBpzk&download=image.png "")
 
 ## 7.[__Dijkstra求最短路 I__](https://www.acwing.com/problem/content/851/)
 

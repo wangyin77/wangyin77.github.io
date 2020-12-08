@@ -65,8 +65,6 @@ int main()
 }
 ```
 
-![](https://tcs.teambition.net/storage/311z0dbae0cdf5543e1ed7ecd1455dd3ab11?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXowZGJhZTBjZGY1NTQzZTFlZDdlY2QxNDU1ZGQzYWIxMSJ9.8wheyrXbAH5Zo4ry00pNvbTUpkEvz-jl42g5p2ZYj_8&download=image.png "")
-
 稍微简写一点:
 
 ```cpp
@@ -173,10 +171,6 @@ int main()
 
 单链表中 (k - 1)是因为idx从0开始，双链表(k + 1)是因为idx从2开始的
 
-![](https://tcs.teambition.net/storage/311zf9abed8e57885a401bfe1540c9f98d56?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXpmOWFiZWQ4ZTU3ODg1YTQwMWJmZTE1NDBjOWY5OGQ1NiJ9.zMGxo3AMzepsWQt7RlZw_JQxINZKMu9g1t9lZG_BS18&download=image.png "")
-
-自己的
-
 ```cpp
 #include<iostream>
 using namespace std;
@@ -223,8 +217,6 @@ int main(){
 
 进入：训练模式-数据结构-栈-828. 模拟栈
 
-![](https://tcs.teambition.net/storage/311z9f165213939be1bb123dfda481f42355?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXo5ZjE2NTIxMzkzOWJlMWJiMTIzZGZkYTQ4MWY0MjM1NSJ9.-uMcB46LneUkTbiA0-STvSeUmEe8mI0p5l4XgzSYlFE&download=image.png "")
-
 题解界面:[__https://www.acwing.com/problem/content/solution/830/1/__](https://www.acwing.com/problem/content/solution/830/1/)
 
 ```cpp
@@ -258,8 +250,6 @@ int main()
 
 进入：训练模式-数据结构-队列-829. 模拟队列
 
-![](https://tcs.teambition.net/storage/311ze37e25f889736fb0ed268e25c58b2828?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXplMzdlMjVmODg5NzM2ZmIwZWQyNjhlMjVjNThiMjgyOCJ9.2gnAS0ZJFb-q3rMkOYZBDPpSddoJmEier5x-IPl7cmQ&download=image.png "")
-
 题解页面:[__https://www.acwing.com/problem/content/solution/831/1/__](https://www.acwing.com/problem/content/solution/831/1/)
 
 ```cpp
@@ -292,8 +282,6 @@ int main()
 ## 5. 单调栈（普通模式已锁）
 
 进入：训练模式-数据结构- 单调栈-830. 单调栈
-
-![](https://tcs.teambition.net/storage/311zcbda475d36d596f03e62d775280ffd3f?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXpjYmRhNDc1ZDM2ZDU5NmYwM2U2MmQ3NzUyODBmZmQzZiJ9.CoLzK-weO_VDWJNS3EEBEkjAkynEqZhCZRBhiuMyaCM&download=image.png "")
 
 题解页面:[__https://www.acwing.com/problem/content/solution/832/1/__](https://www.acwing.com/problem/content/solution/832/1/)
 
@@ -359,8 +347,6 @@ int main()
 
 进入：训练模式-数据结构-KMP-831. KMP字符串
 
-![](https://tcs.teambition.net/storage/311zf1e124269e6deccb1e876a5d376d850a?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXpmMWUxMjQyNjllNmRlY2NiMWU4NzZhNWQzNzZkODUwYSJ9.Q78u03M0Q0ucLyWBUP3LhbN-CeP0-V3b7-X38UEywCU&download=image.png "")
-
 题解页面:[__https://www.acwing.com/problem/content/solution/833/1/__](https://www.acwing.com/problem/content/solution/833/1/)
 
 ```cpp
@@ -400,8 +386,6 @@ int main()
 ## 8.Trie字符串统计（普通模式已锁）
 
 进入：训练模式-数据结构-Tire-835. Trie字符串统计
-
-![](https://tcs.teambition.net/storage/311z99c8733cfe65073a3d21487dbba75f7e?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXo5OWM4NzMzY2ZlNjUwNzNhM2QyMTQ4N2RiYmE3NWY3ZSJ9.H3_auET_b5W8xxacxlx7DJGIs94_PrQkW_kRaBB2fUw&download=image.png "")
 
 题解页面:[__https://www.acwing.com/problem/content/solution/837/1/__](https://www.acwing.com/problem/content/solution/837/1/)
 
@@ -497,8 +481,6 @@ int main()
 }
 ```
 
-![](https://tcs.teambition.net/storage/311z747072763a1ef83112251bb3a3780b78?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXo3NDcwNzI3NjNhMWVmODMxMTIyNTFiYjNhMzc4MGI3OCJ9.ai1aFP2RaMPsKejdO4_cjm6Y3yEFjpQpOn59xVCRVTU&download=image.png "")
-
 `quary`函数返回的是结果还是拿来抑或的数都是可以的,可以参考我的:
 
 ```cpp
@@ -584,17 +566,13 @@ int main()
 
 注意: 这个题有个前置节点`1250.格子游戏`,并且也是锁的
 
-![](https://tcs.teambition.net/storage/311zad4b8fa99334e1c3f0cdd927d044c80c?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXphZDRiOGZhOTkzMzRlMWMzZjBjZGQ5MjdkMDQ0YzgwYyJ9.Lvv8-AC8PDsqIabMQRz9ei3P1VRoqvXGbKW-4gO2JS0&download=image.png "")
-
 题面如下
 
 ![](https://tcs.teambition.net/storage/311zc84f37889cb0c2321c61e72156b6500d?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXpjODRmMzc4ODljYjBjMjMyMWM2MWU3MjE1NmI2NTAwZCJ9.kLRgQMQCqjgNarcPM8njPmyRhxIOgTNos68oaIGjqZI&download=image.png "")
 
 ![](https://tcs.teambition.net/storage/311za4b8d92cf23928bf3978156db3d2bb46?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXphNGI4ZDkyY2YyMzkyOGJmMzk3ODE1NmRiM2QyYmI0NiJ9.OX0CjjD6SdjwSCiAxGsMjlkuvGv_kDKM3frKmZHe-OM&download=image.png "")
 
-来自**算法提高课**4.1-第一题,可以去看那个视频
-
-![](https://tcs.teambition.net/storage/311z76988eec6e1de712298e8939b2927456?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXo3Njk4OGVlYzZlMWRlNzEyMjk4ZTg5MzliMjkyNzQ1NiJ9.vg88TbmoN3wNDNFBKFhIkPDx3-Z3ZN3mSNSTl-PE0rM&download=image.png "")
+来自**算法提高课**4.1-第一题
 
 ```cpp
 #include <cstdio>
@@ -645,8 +623,6 @@ int main()
 ```
 
 数据很水,调试没过,提交过了...很神奇
-
-![](https://tcs.teambition.net/storage/311z308875f9267396ed6927db168444799a?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXozMDg4NzVmOTI2NzM5NmVkNjkyN2RiMTY4NDQ0Nzk5YSJ9.FfHBfkMe0kdRsYHg6Yftfi3X1s3e2by5GoKCwSoi30E&download=image.png "")
 
 题解界面:[__https://www.acwing.com/problem/content/solution/839/1/__](https://www.acwing.com/problem/content/solution/839/1/)
 
@@ -699,8 +675,6 @@ int main()
     return 0;
 }
 ```
-
-![](https://tcs.teambition.net/storage/311zb8a83e0d8e1ce044f8ee4b6b379fb329?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMXpiOGE4M2UwZDhlMWNlMDQ0ZjhlZTRiNmIzNzlmYjMyOSJ9.bzHq7Yi7WMonXvgIR-fWUfUC_I_Eib7xkuIYBLDO1GA&download=image.png "")
 
 ## 12.[__食物链__](https://www.acwing.com/problem/content/description/242/)
 
@@ -837,8 +811,6 @@ int main()
 
 进入：训练模式-数据结构-堆-839. 模拟堆
 
-![](https://tcs.teambition.net/storage/31202e500f072b93340e3221e962f508cf72?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMjAyZTUwMGYwNzJiOTMzNDBlMzIyMWU5NjJmNTA4Y2Y3MiJ9.CG9evH6INh5r3M9HlPipT4W5JiZwOVfXdngh8DFm61g&download=image.png "")
-
 题解页面：[__https://www.acwing.com/problem/content/solution/841/1/__](https://www.acwing.com/problem/content/solution/841/1/)
 
 ```cpp
@@ -920,13 +892,9 @@ int main()
 }
 ```
 
-![](https://tcs.teambition.net/storage/3120ec73b4b0ca3dacf075c8c4273cb321d9?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMjBlYzczYjRiMGNhM2RhY2YwNzVjOGM0MjczY2IzMjFkOSJ9.aA8prdr4c5mq3Bwz5ydP0IxQRCMeK-l7I_k7aBcxzsw&download=image.png "")
-
 ## 15.模拟散列表
 
 进入：训练模式-数据结构-哈希表-840. 模拟散列表
-
-![](https://tcs.teambition.net/storage/3120d63ecb0a99bd4663ad485d2fe04de62d?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMjBkNjNlY2IwYTk5YmQ0NjYzYWQ0ODVkMmZlMDRkZTYyZCJ9.haMMP2mWPgcBcQUKCZ0yPHZxjoIIrhiGTgc3v6dknbE&download=image.png "")
 
 题解页面：[__https://www.acwing.com/problem/content/solution/842/1/__](https://www.acwing.com/problem/content/solution/842/1/)
 
@@ -1014,8 +982,6 @@ int main()
 
 进入：训练模式-数据结构-哈希表-841. 字符串哈希
 
-![](https://tcs.teambition.net/storage/3120f1dfd6bc98912136124a1d1d60d96f3e?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9hcHBJZCI6IjU5Mzc3MGZmODM5NjMyMDAyZTAzNThmMSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTYwNzY3NTI2NCwiaWF0IjoxNjA3MDcwNDY0LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzMxMjBmMWRmZDZiYzk4OTEyMTM2MTI0YTFkMWQ2MGQ5NmYzZSJ9.nvaxDnNufYehlWqnmmksxjWQZ12UjaNkK8bqF6hIcCA&download=image.png "")
-
 题解页面：[__https://www.acwing.com/problem/content/solution/843/1/__](https://www.acwing.com/problem/content/solution/843/1/)
 
 ```cpp
@@ -1051,4 +1017,3 @@ int main()
     return 0;
 }
 ```
-
