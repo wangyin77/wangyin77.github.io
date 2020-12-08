@@ -110,51 +110,39 @@ public:
 };
 ```
 
-> 
+> 执行用时: **32 ms**
+
+> 内存消耗: **17.8 MB**
 
 **【时间复杂度】**
 
-O(n) 
+O(n) n = 81， 也可以看作O(1)
 
 **【注意点】**
 
-1. 其他解法：可以把行列小方格合并起来写，但都是O(1)的做法，但能稍微减少一点点代码量
+1. 其他解法：可以把行列小方格合并起来写，都是O(n)的做法，但能有效减少代码量
 
 ```cpp
 class Solution {
 public:
     bool isValidSudoku(vector<vector<char>>& board) {
-        bool row[9], col[9], st[9];
-        for(int i = 0; i < 9; i++){
-            memset(row, 0, sizeof row);
-            memset(col, 0, sizeof col);
-            for(int j = 0; j < 9; j++){
+        bool row[9][9], col[9][9], cell[3][3][9];
+        memset(row, 0, sizeof row);
+        memset(col, 0, sizeof col);
+        memset(cell, 0, sizeof cell);
+        for(int i = 0; i < 9; i++)
+            for(int j = 0; j < 9; j++)
                 if(board[i][j] != '.'){
-                    int r = board[i][j] - '1';
-                    if(row[r]) return false;
-                    else row[r] = true;
+                    int t = board[i][j] - '1';
+                    if(!row[i][t] && !col[j][t] 
+                                  && !cell[i / 3][j / 3][t])
+                        row[i][t] = col[j][t] 
+                                  = cell[i / 3][j / 3][t] = true;
+                    else return false;
                 }
-                if(board[j][i] != '.'){
-                    int c = board[j][i] - '1';
-                    if(col[c]) return false;
-                    else col[c] = true;
-                }
-            }
-        }
-        for(int i = 0; i < 9; i += 3){
-            for(int j = 0; j < 9; j += 3){
-                memset(st, 0, sizeof st);
-                for(int x = 0; x < 3; x++)
-                    for(int y = 0; y < 3; y++)
-                        if(board[i + x][j + y] != '.'){
-                            int t = board[i + x][j + y] - '1';
-                            if(st[t]) return false;
-                            else st[t] = true;
-                        }
-            }
-        }
         return true;
     }
 };
 ```
+
 
