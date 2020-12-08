@@ -4,6 +4,14 @@ site_description: wy的个人博客
 site_author: wy
 site_url: https://jlwy.ml
 
+# Repository
+repo_name: 'wangyin77/wangyin77.github.io'
+repo_url: 'https://github.com/wangyin77/wangyin77.github.io'
+edit_uri: 'blob/master/docs/'
+
+# Copyright
+copyright: 'Copyright &copy; 2020 CTF WY'
+
 # Contents
 nav:
   - Home: index.md
@@ -37,12 +45,10 @@ theme:
   palette:
     primary: 'Blue Grey'
     accent: 'Pink'
-  include_search_page: false
+  include_search_page: true
   search_index_only: false
 
   features:
-#    tabs: true
-#    - tabs
     - navigation.tabs
   font:
     text: 'Fira Sans'
@@ -56,7 +62,7 @@ markdown_extensions:
   - admonition
   - codehilite:
       guess_lang: false
-      linenums: true
+      linenums: false
   - def_list
   - footnotes
   - meta
