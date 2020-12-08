@@ -54,7 +54,7 @@ theme:
   features:
     - navigation.tabs
   font:
-    text: '经典宋体简'
+    text: 'Roboto'
     code: 'Inconsolata'
 
 # Customization
