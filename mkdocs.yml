@@ -40,7 +40,7 @@ theme:
   include_search_page: false
   search_index_only: false
 
-  feature:
+  features:
 #    tabs: true
 #    - tabs
     - navigation.tabs
