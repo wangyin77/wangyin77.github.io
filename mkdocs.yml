@@ -37,7 +37,9 @@ nav:
     - Leetcode_35. 搜索插入位置: lc/Leetcode_35.md
     - Leetcode_36. 有效的数独: lc/Leetcode_36.md
     - Leetcode_37. 解数独: lc/Leetcode_37.md
-
+    - Leetcode_38. 外观数列: lc/Leetcode_38.md
+    - Leetcode_39. 组合总和: lc/Leetcode_39.md
+    - Leetcode_40. 组合总和 II: lc/Leetcode_40.md
 # Theme
 theme:
   icon:
