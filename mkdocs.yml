@@ -40,6 +40,8 @@ nav:
     - Leetcode_38. 外观数列: lc/Leetcode_38.md
     - Leetcode_39. 组合总和: lc/Leetcode_39.md
     - Leetcode_40. 组合总和 II: lc/Leetcode_40.md
+  - Blog:
+    - WSL2 踩坑全记录: blog/WSL2.md
 # Theme
 theme:
   icon:
