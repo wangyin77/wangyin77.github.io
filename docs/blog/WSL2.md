@@ -50,7 +50,6 @@ deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted
 
 ```bash
 sudo apt update && sudo apt update -y
-sudo apt -y install dist-upgrade
 # 清理缓存
 sudo apt -y clean && sudo apt -y autoclean && sudo apt -y autoremove
 ```
@@ -155,7 +154,7 @@ Collecting package metadata (current_repodata.json): failed
 这时候应该是权限出了问题，得给`miniconda3`还有`.conda`这个文件夹权限,`wy`这里填自己的用户名
 
 ```bash
-sudo chown -R wy miniconda3/
+sudo chown -R wy ~/miniconda3
 sudo chown -R wy ~/.conda
 ```
 
