@@ -20,26 +20,33 @@ nav:
     - 第二讲 数据结构: basic/data structure.md
     - 第三讲 搜索与图论: basic/search.md
   - Leetcode:
-    - Leetcode_1. 两数之和: lc/Leetcode_1.md
-    - Leetcode_2. 两数相加: lc/Leetcode_2.md
-    - Leetcode_3. 无重复字符的最长子串: lc/Leetcode_3.md
-    - Leetcode_4. 寻找两个正序数组的中位数: lc/Leetcode_4.md
-    - Leetcode_5. 最长回文子串: lc/Leetcode_5.md
-    - Leetcode_6. Z 字形变换: lc/Leetcode_6.md
-    - Leetcode_7. 整数反转: lc/Leetcode_7.md
-    - Leetcode_8. 字符串转换整数 (atoi): lc/Leetcode_8.md
-    - Leetcode_9. 回文数: lc/Leetcode_9.md
-    - Leetcode_10. 正则表达式匹配: lc/Leetcode_10.md
-    - Leetcode_31. 下一个排列: lc/Leetcode_31.md
-    - Leetcode_32. 最长有效括号: lc/Leetcode_32.md
-    - Leetcode_33. 搜索旋转排序数组: lc/Leetcode_33.md
-    - Leetcode_34. 在排序数组中查找元素的第一个和最后一个位置: lc/Leetcode_34.md
-    - Leetcode_35. 搜索插入位置: lc/Leetcode_35.md
-    - Leetcode_36. 有效的数独: lc/Leetcode_36.md
-    - Leetcode_37. 解数独: lc/Leetcode_37.md
-    - Leetcode_38. 外观数列: lc/Leetcode_38.md
-    - Leetcode_39. 组合总和: lc/Leetcode_39.md
-    - Leetcode_40. 组合总和 II: lc/Leetcode_40.md
+    - 顺序:
+      - Leetcode_1. 两数之和: lc/Leetcode_1.md
+      - Leetcode_2. 两数相加: lc/Leetcode_2.md
+      - Leetcode_3. 无重复字符的最长子串: lc/Leetcode_3.md
+      - Leetcode_4. 寻找两个正序数组的中位数: lc/Leetcode_4.md
+      - Leetcode_5. 最长回文子串: lc/Leetcode_5.md
+      - Leetcode_6. Z 字形变换: lc/Leetcode_6.md
+      - Leetcode_7. 整数反转: lc/Leetcode_7.md
+      - Leetcode_8. 字符串转换整数 (atoi): lc/Leetcode_8.md
+      - Leetcode_9. 回文数: lc/Leetcode_9.md
+      - Leetcode_10. 正则表达式匹配: lc/Leetcode_10.md
+      - Leetcode_31. 下一个排列: lc/Leetcode_31.md
+      - Leetcode_32. 最长有效括号: lc/Leetcode_32.md
+      - Leetcode_33. 搜索旋转排序数组: lc/Leetcode_33.md
+      - Leetcode_34. 在排序数组中查找元素的第一个和最后一个位置: lc/Leetcode_34.md
+      - Leetcode_35. 搜索插入位置: lc/Leetcode_35.md
+      - Leetcode_36. 有效的数独: lc/Leetcode_36.md
+      - Leetcode_37. 解数独: lc/Leetcode_37.md
+      - Leetcode_38. 外观数列: lc/Leetcode_38.md
+      - Leetcode_39. 组合总和: lc/Leetcode_39.md
+      - Leetcode_40. 组合总和 II: lc/Leetcode_40.md
+    - 周赛:
+      - 221周:
+        - Leetcode_5637. 判断字符串的两半是否相似: lc/Leetcode_5637.md
+        - Leetcode_5638. 吃苹果的最大数目: lc/Leetcode_5638.md
+        - Leetcode_5210. 球会落何处: lc/Leetcode_5210.md
+        - Leetcode_5640. 与数组中元素的最大异或值: lc/Leetcode_5640.md
   - Blog:
     - WSL2 踩坑全记录: blog/WSL2.md
 # Theme

@@ -319,3 +319,93 @@ make
 ```
 
 很尴尬，这里报错了代码35，表示没找到GPU，可能跟我用的P106有关系。
+
+## 4.安装3D点云识别库——OpenPcdet
+
+OpenPcdet是mmlab的一个3D点云识别库。
+
+查看CUDA版本：
+
+```bash
+nvcc -V
+```
+
+我的是11.1.74
+
+首先安装11.1.74的cudatoolkit
+
+```
+conda install -c nvidia cudatoolkit
+```
+
+会发现下的好慢啊，所以装个代理proxychains4，让WSL2能够访问主机代理。
+
+```bash
+git clone https://github.com/rofl0r/proxychains-ng.git
+cd proxychains-ng
+./configure --prefix=/usr/local --sysconfdir=/etc
+# 据说用下面这个更好，没试
+./configure --prefix=/usr --sysconfdir=/etc
+make && make install
+make install-config
+sudo nano /etc/proxychains.conf
+```
+
+最后一段改成`socks5  主机ip 端口`，主机ip，打开任务管理器--性能-以太网，注意不是WSL那个
+
+Conda切换成清华源，之前那个expoert的方式会有一点点问题。这里采用官方做法。
+
+```bash
+nano ~/.condarc
+```
+
+替换成如下内容
+
+```
+channels:
+  - defaults
+show_channel_urls: true
+channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda
+default_channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+custom_channels:
+  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+```
+
+运行 `conda clean -i` 清除索引缓存
+
+利用conda构建一个pcdet环境：
+
+注意，我们之前安装的cuda版本比较新，然后11.1 的cudatoolkit版本还没有（可能是清华源没有），这里先用10.1的凑活一下
+
+```bash
+conda create -n pcdet python=3.7.7 pytorch==1.3.1 torchvision cudatoolkit==10.1.243 cmake mayavi -c pytorch --yes
+```
+
+创建好之后我们可以通过以下命令进出pcdet环境，命令行前会从（base）变成（pcdet）
+
+```bash
+source activate pcdet
+conda deactive
+```
+
+如果cuda装的没问题，在pcdet环境下，执行如下python代码：
+
+```python
+python
+import torch
+print(torch.__version__)
+print(torch.cuda.is_available())
+```
+
+会显示`1.3.1`的pytorch版本号，`True`表示能正确调用cuda
+
