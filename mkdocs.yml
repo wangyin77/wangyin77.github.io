@@ -20,6 +20,16 @@ nav:
     - 第二讲 数据结构: basic/data structure.md
     - 第三讲 搜索与图论: basic/search.md
   - Leetcode:
+    - 周赛:
+      - 221周:
+        - Leetcode_5637. 判断字符串的两半是否相似: lc/Leetcode_5637.md
+        - Leetcode_5638. 吃苹果的最大数目: lc/Leetcode_5638.md
+        - Leetcode_5210. 球会落何处: lc/Leetcode_5210.md
+        - Leetcode_5640. 与数组中元素的最大异或值: lc/Leetcode_5640.md
+      - 222周:
+        - Leetcode_1710. 卡车上的最大单元数: lc/Leetcode_1710.md
+        - Leetcode_1711. 大餐计数: lc/Leetcode_1711.md
+        - Leetcode_1712. 将数组分成三个子数组的方案数: lc/Leetcode_1712.md
     - 顺序:
       - Leetcode_1. 两数之和: lc/Leetcode_1.md
       - Leetcode_2. 两数相加: lc/Leetcode_2.md
@@ -41,12 +51,7 @@ nav:
       - Leetcode_38. 外观数列: lc/Leetcode_38.md
       - Leetcode_39. 组合总和: lc/Leetcode_39.md
       - Leetcode_40. 组合总和 II: lc/Leetcode_40.md
-    - 周赛:
-      - 221周:
-        - Leetcode_5637. 判断字符串的两半是否相似: lc/Leetcode_5637.md
-        - Leetcode_5638. 吃苹果的最大数目: lc/Leetcode_5638.md
-        - Leetcode_5210. 球会落何处: lc/Leetcode_5210.md
-        - Leetcode_5640. 与数组中元素的最大异或值: lc/Leetcode_5640.md
+
   - Blog:
     - WSL2 踩坑全记录: blog/WSL2.md
 # Theme
