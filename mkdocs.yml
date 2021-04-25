@@ -59,6 +59,7 @@ nav:
 theme:
   icon:
     logo: material/bulma
+    repo: fontawesome/brands/github-alt
   name: material
   static_templates:
     - 404.html
@@ -72,6 +73,9 @@ theme:
 
   features:
     - navigation.tabs
+    - navigation.expand
+    - navigation.instant
+    - toc.integrate
   font:
     text: 'Roboto'
     code: 'Inconsolata'
@@ -80,7 +84,7 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/squidfunk
+      link: github.com/wangyin77/
   disqus: wybi-ji
 
 # Extensions
