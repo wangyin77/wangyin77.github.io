@@ -54,6 +54,7 @@ nav:
 
   - Blog:
     - WSL2 踩坑全记录: blog/WSL2.md
+    - Autoware 安装流程记录: blog/Autoware.md
 # Theme
 theme:
   icon:
