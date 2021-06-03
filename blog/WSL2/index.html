@@ -1,0 +1,1404 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="wy的个人博客">
+      
+      
+      
+        <meta name="author" content="wy">
+      
+      
+        <link rel="canonical" href="https://jlwy.ml/blog/WSL2/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
+    
+    
+      
+        <title>WSL2 踩坑全记录 - 心水 - wy 笔记</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.875de78c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#00bdd6">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CInconsolata&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Inconsolata"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wsl2" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="心水 - wy 笔记" class="md-header__button md-logo" aria-label="心水 - wy 笔记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.38 2-5 5-1.25 8.75L11.38 22l7.5-5-5-5 3.75-3.75L11.38 2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            心水 - wy 笔记
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              WSL2 踩坑全记录
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/wangyin77/wangyin77.github.io/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wangyin77/wangyin77.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../basic/basic_algorithm/" class="md-tabs__link">
+        Basic
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../lc/Leetcode_5637/" class="md-tabs__link">
+        Leetcode
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Blog
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../interview/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="md-tabs__link">
+        Interview
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="心水 - wy 笔记" class="md-nav__button md-logo" aria-label="心水 - wy 笔记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.38 2-5 5-1.25 8.75L11.38 22l7.5-5-5-5 3.75-3.75L11.38 2z"/></svg>
+
+    </a>
+    心水 - wy 笔记
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/wangyin77/wangyin77.github.io/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wangyin77/wangyin77.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Basic
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Basic" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Basic
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/basic_algorithm/" class="md-nav__link">
+        第一讲 基础算法
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/data%20structure/" class="md-nav__link">
+        第二讲 数据结构
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/search/" class="md-nav__link">
+        第三讲 搜索与图论
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Leetcode
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Leetcode" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Leetcode
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" data-md-state="indeterminate" type="checkbox" id="__nav_3_1" checked>
+      
+      <label class="md-nav__link" for="__nav_3_1">
+        周赛
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="周赛" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          周赛
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_1" data-md-state="indeterminate" type="checkbox" id="__nav_3_1_1" checked>
+      
+      <label class="md-nav__link" for="__nav_3_1_1">
+        221周
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="221周" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          221周
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_5637/" class="md-nav__link">
+        Leetcode_5637. 判断字符串的两半是否相似
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_5638/" class="md-nav__link">
+        Leetcode_5638. 吃苹果的最大数目
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_5210/" class="md-nav__link">
+        Leetcode_5210. 球会落何处
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_5640/" class="md-nav__link">
+        Leetcode_5640. 与数组中元素的最大异或值
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_2" data-md-state="indeterminate" type="checkbox" id="__nav_3_1_2" checked>
+      
+      <label class="md-nav__link" for="__nav_3_1_2">
+        222周
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="222周" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          222周
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_1710/" class="md-nav__link">
+        Leetcode_1710. 卡车上的最大单元数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_1711/" class="md-nav__link">
+        Leetcode_1711. 大餐计数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_1712/" class="md-nav__link">
+        Leetcode_1712. 将数组分成三个子数组的方案数
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" data-md-state="indeterminate" type="checkbox" id="__nav_3_2" checked>
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        顺序
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="顺序" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          顺序
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_1/" class="md-nav__link">
+        Leetcode_1. 两数之和
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_2/" class="md-nav__link">
+        Leetcode_2. 两数相加
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_3/" class="md-nav__link">
+        Leetcode_3. 无重复字符的最长子串
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_4/" class="md-nav__link">
+        Leetcode_4. 寻找两个正序数组的中位数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_5/" class="md-nav__link">
+        Leetcode_5. 最长回文子串
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_6/" class="md-nav__link">
+        Leetcode_6. Z 字形变换
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_7/" class="md-nav__link">
+        Leetcode_7. 整数反转
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_8/" class="md-nav__link">
+        Leetcode_8. 字符串转换整数 (atoi)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_9/" class="md-nav__link">
+        Leetcode_9. 回文数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_10/" class="md-nav__link">
+        Leetcode_10. 正则表达式匹配
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_31/" class="md-nav__link">
+        Leetcode_31. 下一个排列
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_32/" class="md-nav__link">
+        Leetcode_32. 最长有效括号
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_33/" class="md-nav__link">
+        Leetcode_33. 搜索旋转排序数组
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_34/" class="md-nav__link">
+        Leetcode_34. 在排序数组中查找元素的第一个和最后一个位置
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_35/" class="md-nav__link">
+        Leetcode_35. 搜索插入位置
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_36/" class="md-nav__link">
+        Leetcode_36. 有效的数独
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_37/" class="md-nav__link">
+        Leetcode_37. 解数独
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_38/" class="md-nav__link">
+        Leetcode_38. 外观数列
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_39/" class="md-nav__link">
+        Leetcode_39. 组合总和
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_40/" class="md-nav__link">
+        Leetcode_40. 组合总和 II
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Blog
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          WSL2 踩坑全记录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        WSL2 踩坑全记录
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1wsl" class="md-nav__link">
+    1.安装WSL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-miniconda-jupyter-lab" class="md-nav__link">
+    2. 安装Miniconda 和 Jupyter-lab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3cuda" class="md-nav__link">
+    3.安装CUDA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43dopenpcdet" class="md-nav__link">
+    4.安装3D点云识别库——OpenPcdet
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Autoware/" class="md-nav__link">
+        Autoware 安装流程记录
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Interview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Interview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Interview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interview/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="md-nav__link">
+        设计模式
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interview/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        数据结构
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interview/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        操作系统
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interview/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        计算机网络
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/wangyin77/wangyin77.github.io/blob/master/docs/blog/WSL2.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="wsl2">WSL2 踩坑全记录<a class="headerlink" href="#wsl2" title="Permanent link">&para;</a></h1>
+<h2 id="1wsl">1.安装WSL<a class="headerlink" href="#1wsl" title="Permanent link">&para;</a></h2>
+<p>进入insider 空白要开信息采集，开启灰色需要进计算机管理给权限（还挺麻烦的，网上有教程,例如<a href="https://blog.csdn.net/weixin_41542958/article/details/107577542">这个</a>）</p>
+<p>需要系统版本BUILD &gt; 20145吧，大概是这个数，据说202xx的也有问题，就选最新的dev通道吧。</p>
+<p>Store里装Ubuntu 18.04</p>
+<p>进去之后创建用户名密码</p>
+<p>创建root密码</p>
+<div class="highlight"><pre><span></span><code>sudo passwd root
+</code></pre></div>
+<p>更改软件源</p>
+<div class="highlight"><pre><span></span><code>sudo nano /etc/apt/sources.list
+</code></pre></div>
+<p><code>Alt + T</code> 全选剪切</p>
+<p>注意：需要复制多行文本时需要用Windows Terminal打开！Windows Terminal通过Store安装。</p>
+<p>添加<a href="https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/">清华源</a>，注意版本18.04</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span>
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
+<span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse</span>
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+<span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse</span>
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+<span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse</span>
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+<span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse</span>
+
+<span class="c1"># 预发布软件源，不建议启用</span>
+<span class="c1"># deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse</span>
+<span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse</span>
+</code></pre></div>
+<p><code>Ctrl + X</code> 保存退出</p>
+<p>更新包，系统初始状态是空包，一定要更新</p>
+<div class="highlight"><pre><span></span><code>sudo apt update <span class="o">&amp;&amp;</span> sudo apt update -y
+<span class="c1"># 清理缓存</span>
+sudo apt -y clean <span class="o">&amp;&amp;</span> sudo apt -y autoclean <span class="o">&amp;&amp;</span> sudo apt -y autoremove
+</code></pre></div>
+<p>连不上网，惊不惊喜。因为WSL2目前版本吧有很多BUG，连不上网的问题还没修好，只能手动解决，具体方式如下：</p>
+<p>首先删除 /etc/resolv.conf，这是个软连接，直接改重启就没了</p>
+<div class="highlight"><pre><span></span><code>sudo rm /etc/resolv.conf
+</code></pre></div>
+<p>然后再生成一个 <code>/etc/resolv.conf</code></p>
+<div class="highlight"><pre><span></span><code>sudo touch /etc/resolv.conf
+</code></pre></div>
+<p>然后在这个文件里写入自定义的DNS服务器，因为默认的不好使</p>
+<div class="highlight"><pre><span></span><code>sudo nano /etc/resolv.conf
+</code></pre></div>
+<p>写入内容,可以用别的DNS：</p>
+<div class="highlight"><pre><span></span><code>nameserver 114.114.114.114
+</code></pre></div>
+<p>再创建一个/etc/wsl.conf，阻止启动时创建<code>/etc/resolv.conf</code></p>
+<div class="highlight"><pre><span></span><code>sudo touch /etc/wsl.conf
+sudo nano /etc/wsl.conf
+</code></pre></div>
+<p>写入内容：</p>
+<div class="highlight"><pre><span></span><code>[network] 
+generateResolvConf = false 
+</code></pre></div>
+<p>继续更新包</p>
+<div class="highlight"><pre><span></span><code>sudo apt update <span class="o">&amp;&amp;</span> sudo apt update -y
+<span class="c1"># 清理缓存</span>
+sudo apt -y clean <span class="o">&amp;&amp;</span> sudo apt -y autoclean <span class="o">&amp;&amp;</span> sudo apt -y autoremove
+</code></pre></div>
+<h2 id="2-miniconda-jupyter-lab">2. 安装Miniconda 和 Jupyter-lab<a class="headerlink" href="#2-miniconda-jupyter-lab" title="Permanent link">&para;</a></h2>
+<p>接着安装一下conda，这里先装个Miniconda吧，首先下载</p>
+<div class="highlight"><pre><span></span><code>wget -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
+</code></pre></div>
+<p>然后最好给个权限，不然可能安装的会有点问题，777就是啥权限都有</p>
+<div class="highlight"><pre><span></span><code>sudo chmod <span class="m">777</span> ~/Miniconda3-latest-Linux-x86_64.sh
+</code></pre></div>
+<p>然后开始安装，最好还是给个sudo权限</p>
+<div class="highlight"><pre><span></span><code>sudo bash Miniconda3-latest-Linux-x86_64.sh 
+</code></pre></div>
+<p>很多人说吧，不要自动初始化，但是咱全新的安装和别的软件也冲突不了，就直接第三步选yes了</p>
+<p>接着装个JupyterLab</p>
+<div class="highlight"><pre><span></span><code>conda install -c conda-forge jupyterlab
+</code></pre></div>
+<p>然后发现，</p>
+<div class="highlight"><pre><span></span><code>conda: command not found
+</code></pre></div>
+<p>可能需要重启下，重启就是把终端关了再打开，很简单，此时能看到<code>（base）</code>了</p>
+<p>还需要添加一下安装源</p>
+<div class="highlight"><pre><span></span><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge
+</code></pre></div>
+<p>此时输入命令，还是装不了</p>
+<div class="highlight"><pre><span></span><code>Collecting package metadata (current_repodata.json): failed
+</code></pre></div>
+<p>这时候应该是权限出了问题，得给<code>miniconda3</code>还有<code>.conda</code>这个文件夹权限,<code>wy</code>这里填自己的用户名</p>
+<div class="highlight"><pre><span></span><code>sudo chown -R wy ~/miniconda3
+sudo chown -R wy ~/.conda
+</code></pre></div>
+<p>好了这就开始安装了，继续执行</p>
+<div class="highlight"><pre><span></span><code>conda install -c conda-forge jupyterlab
+</code></pre></div>
+<p>下的还挺慢，感觉channel不是太好</p>
+<p>然后打开jupyter-lab，直接打</p>
+<div class="highlight"><pre><span></span><code>jupyter lab
+</code></pre></div>
+<p>此时吧，会给一个地址，同时他会试图打开一个浏览器，这时候就乱码了，可能是我的win是英文版的问题。按<code>Ctrl + C</code>是能看到地址的，反正就不能自动打开windows 里的浏览器。</p>
+<p>于是，设置一下。<code>Ctrl + Z</code>结束<code>jupyter-lab</code>进程</p>
+<p>首先，生成默认配置文件</p>
+<div class="highlight"><pre><span></span><code>jupyter notebook --generate-config
+</code></pre></div>
+<p>修改这个文件</p>
+<div class="highlight"><pre><span></span><code>nano ~/.jupyter/jupyter_notebook_config.py
+</code></pre></div>
+<p><code>Ctrl + W</code> 搜索 <code>c.NotebookApp.use_redirect_file</code>这个配置选项，把它改成，并取消注释</p>
+<p><code>c.NotebookApp.use_redirect_file = False</code></p>
+<p>之后修改<code>~/.bashrc</code></p>
+<div class="highlight"><pre><span></span><code>nano ~/.bashrc
+</code></pre></div>
+<p>添加浏览器指向，例如<code>"C:\Program Files\Google\Chrome\Application\chrome.exe"</code>写成<code>'/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'</code></p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">BROWSER</span><span class="o">=</span><span class="s1">&#39;/mnt/c/Program Files/Google/Chrome/Application/chrome.exe&#39;</span>
+</code></pre></div>
+<p>刷新bash</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> ~/.bashrc
+</code></pre></div>
+<p>此时用<code>jupyter lab</code>命令就能直接打开windows内部的浏览器了</p>
+<h2 id="3cuda">3.安装CUDA<a class="headerlink" href="#3cuda" title="Permanent link">&para;</a></h2>
+<p>接下来装一下CUDA</p>
+<p>首先要有Nvidia的显卡，然后在windows里装上最新的驱动（得是最新的，目前还是预览版，需要注册Nvidia账户，在这里下载）</p>
+<p>然后进入WSL2，下载WSL-Ubuntu的CUDA，可以在这个网站找到</p>
+<div class="highlight"><pre><span></span><code>wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda_11.1.0_455.23.05_linux.run
+sudo sh cuda_11.1.0_455.23.05_linux.run
+</code></pre></div>
+<p>这一步可以先搭个梯子把那个run文件下下来挺大的3GB+，然后拷进去，下次要是重装就不用重复下了。</p>
+<p>拷进去之后安装前先给个权限，这里我也拷在~下了</p>
+<p>在这之前需要安装几个需要的软件（系统里自带的啥也没有。。）</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install -y gcc g++ make
+sudo chmod <span class="m">777</span> ~/cuda_11.1.0_455.23.05_linux.run
+sudo sh cuda_11.1.0_455.23.05_linux.run
+</code></pre></div>
+<p>需要等待一段时间，可能比较卡，此时内存占用巨大，基本用满了（14.3GB/15.9GB），可能在解压吧。出错的话查看对应的log文件。</p>
+<p>进入之后输入<code>accept</code>，然后选择安装即可，注意如果出现了driver的选项，需要把driver的<code>×</code>去掉。</p>
+<div class="highlight"><pre><span></span><code>===========
+= Summary =
+===========
+
+Driver:   Not Selected
+Toolkit:  Installed in /usr/local/cuda-11.1/
+Samples:  Installed in /home/wy/, but missing recommended libraries
+
+Please make sure that
+ -   PATH includes /usr/local/cuda-11.1/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-11.1/lib64, or, add /usr/local/cuda-11.1/lib64 to /etc/ld.so.conf and run ldconfig as root
+
+To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-11.1/bin
+***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least .00 is required for CUDA 11.1 functionality to work.
+To install the driver using this installer, run the following command, replacing &lt;CudaInstaller&gt; with the name of this run file:
+    sudo &lt;CudaInstaller&gt;.run --silent --driver
+
+Logfile is /var/log/cuda-installer.log===========
+= Summary =
+===========
+
+Driver:   Not Selected
+Toolkit:  Installed in /usr/local/cuda-11.1/
+Samples:  Installed in /home/wy/, but missing recommended libraries
+
+Please make sure that
+ -   PATH includes /usr/local/cuda-11.1/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-11.1/lib64, or, add /usr/local/cuda-11.1/lib64 to /etc/ld.so.conf and run ldconfig as root
+
+To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-11.1/bin
+***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least .00 is required for CUDA 11.1 functionality to work.
+To install the driver using this installer, run the following command, replacing &lt;CudaInstaller&gt; with the name of this run file:
+    sudo &lt;CudaInstaller&gt;.run --silent --driver
+
+Logfile is /var/log/cuda-installer.log
+</code></pre></div>
+<p>可以看到一个Summary，他说他装完了，但是环境需要你配。具体来说呢，可以参考<a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions">官方文档</a></p>
+<p>这里版本号，我装的是11.1的，需要修改一下</p>
+<p>环境变量可以添加在很多地方，这里加在~/.bashrc里</p>
+<div class="highlight"><pre><span></span><code>nano ~/.bashrc
+</code></pre></div>
+<p>在最后加如下：</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/cuda-11.1/bin<span class="si">${</span><span class="nv">PATH</span><span class="p">:+:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}}</span>
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/local/cuda-11.2/lib64<span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="p">:+:</span><span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="si">}}</span>
+</code></pre></div>
+<p>刷新一下bash</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> ~/.bashrc
+</code></pre></div>
+<p>运行一下</p>
+<div class="highlight"><pre><span></span><code>nvcc --version
+</code></pre></div>
+<p>可以看到CUDA装好了</p>
+<p>还可以进一步验证，执行如下操作</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ./NVIDIA_CUDA-11.1_Samples/1_Utilities/deviceQuery
+make
+./deviceQuery
+</code></pre></div>
+<p>很尴尬，这里报错了代码35，表示没找到GPU，可能跟我用的P106有关系。</p>
+<h2 id="43dopenpcdet">4.安装3D点云识别库——OpenPcdet<a class="headerlink" href="#43dopenpcdet" title="Permanent link">&para;</a></h2>
+<p>OpenPcdet是mmlab的一个3D点云识别库。</p>
+<p>查看CUDA版本：</p>
+<div class="highlight"><pre><span></span><code>nvcc -V
+</code></pre></div>
+<p>我的是11.1.74</p>
+<p>首先安装11.1.74的cudatoolkit</p>
+<div class="highlight"><pre><span></span><code>conda install -c nvidia cudatoolkit
+</code></pre></div>
+<p>会发现下的好慢啊，所以装个代理proxychains4，让WSL2能够访问主机代理。</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/rofl0r/proxychains-ng.git
+<span class="nb">cd</span> proxychains-ng
+./configure --prefix<span class="o">=</span>/usr/local --sysconfdir<span class="o">=</span>/etc
+<span class="c1"># 据说用下面这个更好，没试</span>
+./configure --prefix<span class="o">=</span>/usr --sysconfdir<span class="o">=</span>/etc
+make <span class="o">&amp;&amp;</span> make install
+make install-config
+sudo nano /etc/proxychains.conf
+</code></pre></div>
+<p>最后一段改成<code>socks5  主机ip 端口</code>，主机ip，打开任务管理器--性能-以太网，注意不是WSL那个</p>
+<p>Conda切换成清华源，之前那个expoert的方式会有一点点问题。这里采用官方做法。</p>
+<div class="highlight"><pre><span></span><code>nano ~/.condarc
+</code></pre></div>
+<p>替换成如下内容</p>
+<div class="highlight"><pre><span></span><code>channels:
+  - defaults
+show_channel_urls: true
+channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda
+default_channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+custom_channels:
+  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</code></pre></div>
+<p>运行 <code>conda clean -i</code> 清除索引缓存</p>
+<p>利用conda构建一个pcdet环境：</p>
+<p>注意，我们之前安装的cuda版本比较新，然后11.1 的cudatoolkit版本还没有（可能是清华源没有），这里先用10.1的凑活一下</p>
+<div class="highlight"><pre><span></span><code>conda create -n pcdet <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7.7 <span class="nv">pytorch</span><span class="o">==</span><span class="m">1</span>.3.1 torchvision <span class="nv">cudatoolkit</span><span class="o">==</span><span class="m">10</span>.1.243 cmake mayavi -c pytorch --yes
+</code></pre></div>
+<p>创建好之后我们可以通过以下命令进出pcdet环境，命令行前会从（base）变成（pcdet）</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> activate pcdet
+conda deactive
+</code></pre></div>
+<p>如果cuda装的没问题，在pcdet环境下，执行如下python代码：</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">())</span>
+</code></pre></div>
+<p>会显示<code>1.3.1</code>的pytorch版本号，<code>True</code>表示能正确调用cuda</p>
+                
+              
+              
+                
+
+
+  <h2 id="__comments">评论</h2>
+  <div id="disqus_thread"></div>
+  <script>var disqus_config=function(){this.page.url="https://jlwy.ml/blog/WSL2/",this.page.identifier="/blog/WSL2/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//wybi-ji.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../../lc/Leetcode_40/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              Leetcode_40. 组合总和 II
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Autoware/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              Autoware 安装流程记录
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 WY
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="github.com/wangyin77/" target="_blank" rel="noopener" title="" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.instant", "toc.integrate"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.34eae1b6.min.js"></script>
+      
+        <script src="../../search/main.js"></script>
+      
+    
+  </body>
+</html>

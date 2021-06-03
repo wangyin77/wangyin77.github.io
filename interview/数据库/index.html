@@ -1,0 +1,1256 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="wy的个人博客">
+      
+      
+      
+        <meta name="author" content="wy">
+      
+      
+        <link rel="canonical" href="https://jlwy.ml/interview/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
+    
+    
+      
+        <title>数据库 - 心水 - wy 笔记</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.875de78c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#00bdd6">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CInconsolata&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Inconsolata"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="心水 - wy 笔记" class="md-header__button md-logo" aria-label="心水 - wy 笔记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.38 2-5 5-1.25 8.75L11.38 22l7.5-5-5-5 3.75-3.75L11.38 2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            心水 - wy 笔记
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              数据库
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/wangyin77/wangyin77.github.io/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wangyin77/wangyin77.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../basic/basic_algorithm/" class="md-tabs__link">
+        Basic
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../lc/Leetcode_5637/" class="md-tabs__link">
+        Leetcode
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../blog/WSL2/" class="md-tabs__link">
+        Blog
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="md-tabs__link">
+        Interview
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="心水 - wy 笔记" class="md-nav__button md-logo" aria-label="心水 - wy 笔记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.38 2-5 5-1.25 8.75L11.38 22l7.5-5-5-5 3.75-3.75L11.38 2z"/></svg>
+
+    </a>
+    心水 - wy 笔记
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/wangyin77/wangyin77.github.io/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wangyin77/wangyin77.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Basic
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Basic" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Basic
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/basic_algorithm/" class="md-nav__link">
+        第一讲 基础算法
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/data%20structure/" class="md-nav__link">
+        第二讲 数据结构
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/search/" class="md-nav__link">
+        第三讲 搜索与图论
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Leetcode
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Leetcode" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Leetcode
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" data-md-state="indeterminate" type="checkbox" id="__nav_3_1" checked>
+      
+      <label class="md-nav__link" for="__nav_3_1">
+        周赛
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="周赛" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          周赛
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_1" data-md-state="indeterminate" type="checkbox" id="__nav_3_1_1" checked>
+      
+      <label class="md-nav__link" for="__nav_3_1_1">
+        221周
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="221周" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          221周
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_5637/" class="md-nav__link">
+        Leetcode_5637. 判断字符串的两半是否相似
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_5638/" class="md-nav__link">
+        Leetcode_5638. 吃苹果的最大数目
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_5210/" class="md-nav__link">
+        Leetcode_5210. 球会落何处
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_5640/" class="md-nav__link">
+        Leetcode_5640. 与数组中元素的最大异或值
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_2" data-md-state="indeterminate" type="checkbox" id="__nav_3_1_2" checked>
+      
+      <label class="md-nav__link" for="__nav_3_1_2">
+        222周
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="222周" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          222周
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_1710/" class="md-nav__link">
+        Leetcode_1710. 卡车上的最大单元数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_1711/" class="md-nav__link">
+        Leetcode_1711. 大餐计数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_1712/" class="md-nav__link">
+        Leetcode_1712. 将数组分成三个子数组的方案数
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" data-md-state="indeterminate" type="checkbox" id="__nav_3_2" checked>
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        顺序
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="顺序" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          顺序
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_1/" class="md-nav__link">
+        Leetcode_1. 两数之和
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_2/" class="md-nav__link">
+        Leetcode_2. 两数相加
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_3/" class="md-nav__link">
+        Leetcode_3. 无重复字符的最长子串
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_4/" class="md-nav__link">
+        Leetcode_4. 寻找两个正序数组的中位数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_5/" class="md-nav__link">
+        Leetcode_5. 最长回文子串
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_6/" class="md-nav__link">
+        Leetcode_6. Z 字形变换
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_7/" class="md-nav__link">
+        Leetcode_7. 整数反转
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_8/" class="md-nav__link">
+        Leetcode_8. 字符串转换整数 (atoi)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_9/" class="md-nav__link">
+        Leetcode_9. 回文数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_10/" class="md-nav__link">
+        Leetcode_10. 正则表达式匹配
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_31/" class="md-nav__link">
+        Leetcode_31. 下一个排列
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_32/" class="md-nav__link">
+        Leetcode_32. 最长有效括号
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_33/" class="md-nav__link">
+        Leetcode_33. 搜索旋转排序数组
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_34/" class="md-nav__link">
+        Leetcode_34. 在排序数组中查找元素的第一个和最后一个位置
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_35/" class="md-nav__link">
+        Leetcode_35. 搜索插入位置
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_36/" class="md-nav__link">
+        Leetcode_36. 有效的数独
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_37/" class="md-nav__link">
+        Leetcode_37. 解数独
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_38/" class="md-nav__link">
+        Leetcode_38. 外观数列
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_39/" class="md-nav__link">
+        Leetcode_39. 组合总和
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_40/" class="md-nav__link">
+        Leetcode_40. 组合总和 II
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Blog
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/WSL2/" class="md-nav__link">
+        WSL2 踩坑全记录
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/Autoware/" class="md-nav__link">
+        Autoware 安装流程记录
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Interview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Interview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Interview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="md-nav__link">
+        设计模式
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        数据结构
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        操作系统
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        计算机网络
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/wangyin77/wangyin77.github.io/blob/master/docs/interview/数据库.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>数据库</h1>
+                
+                <h2 id="_1">简述数据库三大范式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>第一范式是最基本的范式。如果数据库表中的所有字段值都是不可分解的原子值，就说明该数据库表满足了第一范式。</p>
+<p>数据库第二范式：关系模式必须满足第一范式，并且所有非主属性都完全依赖于主码。注意，符合第二范式的关系模型可能还存在数据冗余、更新异常等问题。关系模型（学号，姓名，专业编号，专业名称）中，学号-&gt;姓名，而专业编号-&gt;专业名称，不满足数据库第二范式</p>
+<p>数据库第三范式：关系模型满足第二范式，所有非主属性对任何候选关键字都不存在传递依赖。即每个属性都跟主键有直接关系而不是间接关系。接着以学生表举例，对于关系模型（学号，姓名，年龄，性别，所在院校，院校地址，院校电话）院校地址，院校电话和学号不存在直接关系，因此不满足第三范式。</p>
+<h2 id="mysql">简述MySQL的架构<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h2>
+<p>MySQL可以分为应用层,逻辑层,数据库引擎层,物理层。</p>
+<p>应用层：负责和客户端，响应客户端请求，建立连接，返回数据。</p>
+<p>逻辑层：包括SQK接口，解析器，优化器，Cache与buffer。</p>
+<p>数据库引擎层：有常见的MyISAM,InnoDB等等。</p>
+<p>物理层：负责文件存储，日志等等。</p>
+<h2 id="sql">简述执行SQL语言的过程<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h2>
+<ol>
+<li>客户端首先通过连接器进行身份认证和权限相关</li>
+<li>如果是执行查询语句的时候，会先查询缓存，但MySQL 8.0 版本后该步骤移除。</li>
+<li>没有命中缓存的话，SQL 语句就会经过解析器，分析语句，包括语法检查等等。</li>
+<li>通过优化器，将用户的SQL语句按照 MySQL 认为最优的方案去执行。</li>
+<li>执行语句，并从存储引擎返回数据。</li>
+</ol>
+<h2 id="mysql_1">简述MySQL的共享锁排它锁<a class="headerlink" href="#mysql_1" title="Permanent link">&para;</a></h2>
+<p>共享锁也称为读锁，相互不阻塞，多个客户在同一时刻可以同时读取同一个资源而不相互干扰。排他锁也称为写锁，会阻塞其他的写锁和读锁，确保在给定时间内只有一个用户能执行写入并防止其他用户读取正在写入的同一资源。</p>
+<h2 id="mysql_2">简述MySQL中的按粒度的锁分类<a class="headerlink" href="#mysql_2" title="Permanent link">&para;</a></h2>
+<p>表级锁: 对当前操作的整张表加锁,实现简单，加锁快，但并发能力低。</p>
+<p>行锁: 锁住某一行，如果表存在索引，那么记录锁是锁在索引上的，如果表没有索引，那么 InnoDB 会创建一个隐藏的聚簇索引加锁。行级锁能大大减少数据库操作的冲突。其加锁粒度最小，并发度高，但加锁的开销也最大，加锁慢，会出现死锁。</p>
+<p>Gap 锁：也称为间隙锁: 锁定一个范围但不包括记录本身。其目的是为了防止同一事物的两次当前读出现幻读的情况。</p>
+<p>Next-key Lock： 行锁+gap锁。</p>
+<h2 id="_2">如何解决数据库死锁<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>预先检测到死锁的循环依赖，并立即返回一个错误。</li>
+<li>当查询的时间达到锁等待超时的设定后放弃锁请求。</li>
+</ol>
+<h2 id="_3">简述乐观锁和悲观锁<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>乐观锁：对于数据冲突保持一种乐观态度，操作数据时不会对操作的数据进行加锁，只有到数据提交的时候才通过一种机制来验证数据是否存在冲突。</p>
+<p>悲观锁：对于数据冲突保持一种悲观态度，在修改数据之前把数据锁住，然后再对数据进行读写，在它释放锁之前任何人都不能对其数据进行操作，直到前面一个人把锁释放后下一个人数据加锁才可对数据进行加锁，然后才可以对数据进行操作，一般数据库本身锁的机制都是基于悲观锁的机制实现的。</p>
+<h2 id="innodb">简述InnoDB存储引擎<a class="headerlink" href="#innodb" title="Permanent link">&para;</a></h2>
+<p>InnoDB 是 MySQL 的默认事务型引擎，支持事务，表是基于聚簇索引建立的。支持表级锁和行级锁，支持外键，适合数据增删改查都频繁的情况。</p>
+<p>InnoDB 采用 MVCC 来支持高并发，并且实现了四个标准的隔离级别。其默认级别是 REPEATABLE READ，并通过间隙锁策略防止幻读，间隙锁使 InnoDB 不仅仅锁定查询涉及的行，还会对索引中的间隙进行锁定防止幻行的插入。</p>
+<h2 id="myisam">简述MyISAM存储引擎<a class="headerlink" href="#myisam" title="Permanent link">&para;</a></h2>
+<p>MySQL5.1及之前，MyISAM 是默认存储引擎。MyISAM不支持事务，Myisam支持表级锁，不支持行级锁，表不支持外键，该存储引擎存有表的行数，count运算会更快。适合查询频繁，不适合对于增删改要求高的情况</p>
+<h2 id="memory">简述Memory存储引擎<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h2>
+<p>Memory存储引擎将所有数据都保存在内存，不需要磁盘 IO。支持哈希索引，因此查找速度极快。Memory 表使用表级锁，因此并发写入的性能较低。</p>
+<h2 id="_4">索引是什么？<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>索引是存储引擎中用于快速找到记录的一种数据结构。在关系型数据库中，索引具体是一种对数据库中一列或多列的值进行排序的存储结构。</p>
+<h2 id="_5">为什么引入索引？<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>为了提高数据查询的效率。索引对数据库查询良好的性能非常关键，当表中数据量越来越大，索引对性能的影响越重要。</p>
+<h2 id="mysql_3">Mysql有哪些常见索引类型？<a class="headerlink" href="#mysql_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>数据结构角度</p>
+<blockquote>
+<p>B-Tree索引
+哈希索引
+R-Tree索引
+全文索引</p>
+</blockquote>
+</li>
+<li>
+<p>物理存储角度</p>
+<blockquote>
+<p>主键索引（聚簇索引）：叶子节点存的是整行的数据
+非主键索引（二级索引）：叶子节点存的主键的值</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="b-treeb">简述B-Tree与B+树<a class="headerlink" href="#b-treeb" title="Permanent link">&para;</a></h2>
+<p>B-Tree 是一种自平衡的多叉树。每个节点都存储关键字值。其左子节点的关键字值小于该节点关键字值，且右子节点的关键字值大于或等于该节点关键字值。</p>
+<p>B+树也是是一种自平衡的多叉树。其基本定义与B树相同，不同点在于数据只出现在叶子节点，所有叶子节点增加了一个链指针，方便进行范围查询。</p>
+<p>B+树中间节点不存放数据，所以同样大小的磁盘页上可以容纳更多节点元素，访问叶子节点上关联的数据也具有更好的缓存命中率。并且数据顺序排列并且相连，所以便于区间查找和搜索。</p>
+<p>B树每一个节点都包含key和value，查询效率比B+树高。</p>
+<h2 id="hash">简述Hash索引<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h2>
+<p>哈希索引对于每一行数据计算一个哈希码，并将所有的哈希码存储在索引中，同时在哈希表中保存指向每个数据行的指针。只有 Memory 引擎显式支持哈希索引。</p>
+<p>Hash索引不支持范围查询，无法用于排序，也不支持部分索引列匹配查找。</p>
+<h2 id="hash_1">简述自适应Hash索引<a class="headerlink" href="#hash_1" title="Permanent link">&para;</a></h2>
+<p>InnoDB对于频繁使用的某些索引值，会在内存中基于 B-Tree 索引之上再创键一个哈希索引，这也被称为自适应Hash索引。</p>
+<h2 id="_6">简述聚集索引和稀疏索引<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>聚集索引按每张表的主键构建一棵B+树，数据库中的每个搜索键值都有一个索引记录，每个数据页通过双向链表连接。表数据访问更快，但表更新代价高。</p>
+<p>稀疏索引不会为每个搜索关键字创建索引记录。搜索过程需要，我们首先按索引记录进行操作，并按顺序搜索，直到找到所需的数据为止。</p>
+<h2 id="_7">简述辅助索引与回表查询<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>辅助索引是非聚集索引，叶子节点不包含记录的全部数据，包含了一个书签用来告诉InnoDB哪里可以找到与索引相对应的行数据。</p>
+<p>通过辅助索引查询，先通过书签查到聚集索引，再根据聚集索引查对应的值，需要两次，也称为回表查询。</p>
+<h2 id="_8">简述联合索引和最左匹配原则<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>联合索引是指对表上的多个列的关键词进行索引。</p>
+<p>对于联合索引的查询，如果精确匹配联合索引的左边连续一列或者多列，则mysql会一直向右匹配直到遇到范围查询（&gt;,&lt;,between,like）就停止匹配。Mysql会对第一个索引字段数据进行排序，在第一个字段基础上，再对第二个字段排序。</p>
+<h2 id="_9">简述覆盖索引<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>覆盖索引指一个索引包含或覆盖了所有需要查询的字段的值，不需要回表查询，即索引本身存了对应的值。</p>
+<h2 id="b">为什么数据库不用红黑树用B+树<a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
+<p>红黑树的出度为 2，而 B Tree 的出度一般都非常大。红黑树的树高 h 很明显比 B Tree 大非常多，IO次数很多，导致会比较慢，因此检索的次数也就更多。</p>
+<p>B+Tree 相比于 B-Tree 更适合外存索引，拥有更大的出度，IO次数较少，检索效率会更高。</p>
+<h2 id="_10">基于主键索引的查询和非主键索引的查询有什么区别？<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>对于select * from 主键=XX，基于主键的普通查询仅查找主键这棵树，对于select * from 非主键=XX，基于非主键的查询有可能存在回表过程（回到主键索引树搜索的过程称为回表），因为非主键索引叶子节点仅存主键值，无整行全部信息。</p>
+<h2 id="_11">非主键索引的查询一定会回表吗？<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>不一定，当查询语句的要求字段全部命中索引，不用回表查询。如select 主键 from 非主键=XX，此时非主键索引叶子节点即可拿到主键信息，不用回表。</p>
+<h2 id="mysqlexplain">简述MySQL使用EXPLAIN 的关键字段<a class="headerlink" href="#mysqlexplain" title="Permanent link">&para;</a></h2>
+<p>explain关键字用于分析sql语句的执行情况，可以通过他进行sql语句的性能分析。</p>
+<p>type：表示连接类型，从好到差的类型排序为
+- system：系统表，数据已经加载到内存里。
+- const：常量连接，通过索引一次就找到。
+- eq_ref：唯一性索引扫描，返回所有匹配某个单独值的行。
+- ref：非主键非唯一索引等值扫描，const或eq_ref改为普通非唯一索引。
+- range：范围扫描，在索引上扫码特定范围内的值。 
+- index：索引树扫描，扫描索引上的全部数据。
+- all：全表扫描。</p>
+<p>key：显示MySQL实际决定使用的键。</p>
+<p>key_len：显示MySQL决定使用的键长度，长度越短越好</p>
+<p>Extra：额外信息
+- Using filesort：MySQL使用外部的索引排序，很慢需要优化。
+- Using temporary：使用了临时表保存中间结果，很慢需要优化。
+- Using index：使用了覆盖索引。
+- Using where：使用了where。</p>
+<h2 id="mysql_4">简述MySQL优化流程<a class="headerlink" href="#mysql_4" title="Permanent link">&para;</a></h2>
+<ol>
+<li>通过慢日志定位执行较慢的SQL语句</li>
+<li>利用explain对这些关键字段进行分析</li>
+<li>根据分析结果进行优化</li>
+</ol>
+<h2 id="mysqllog">简述MySQL中的日志log<a class="headerlink" href="#mysqllog" title="Permanent link">&para;</a></h2>
+<p>redo log: 存储引擎级别的log（InnoDB有，MyISAM没有），该log关注于事务的恢复.在重启mysql服务的时候，根据redo log进行重做，从而使事务有持久性。</p>
+<p>undo log：是存储引擎级别的log（InnoDB有，MyISAM没有）保证数据的原子性，该log保存了事务发生之前的数据的一个版本，可以用于回滚，是MVCC的重要实现方法之一。</p>
+<p>bin log：数据库级别的log，关注恢复数据库的数据。</p>
+<h2 id="_12">简述事务<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>事务内的语句要么全部执行成功，要么全部执行失败。</p>
+<p>事务满足如下几个特性：</p>
+<ul>
+<li>原子性（Atomicity）:</li>
+</ul>
+<blockquote>
+<p>一个事务中的所有操作要么全部完成，要么全部不完成。
+* 一致性（Consistency）:</p>
+<p>事务执行前后数据库的状态保存一致。
+* 隔离性（Isolation）</p>
+<p>多个并发事务对数据库进行操作，事务间互不干扰。
+* 持久性（Durability）</p>
+<p>事务执行完毕，对数据的修改是永久的，即使系统故障也不会丢失</p>
+</blockquote>
+<h2 id="_13">数据库中多个事务同时进行可能会出现什么问题？<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<ul>
+<li>丢失修改</li>
+<li>脏读：当前事务可以查看到别的事务未提交的数据。</li>
+<li>不可重读：在同一事务中，使用相同的查询语句，同一数据资源莫名改变了。</li>
+<li>幻读：在同一事务中，使用相同的查询语句，莫名多出了一些之前不存在的数据，或莫名少了一些原先存在的数据。</li>
+</ul>
+<h2 id="sql_1">SQL的事务隔离级别有哪些？<a class="headerlink" href="#sql_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>读未提交：</li>
+</ul>
+<blockquote>
+<p>一个事务还没提交，它做的变更就能被别的事务看到。
+* 读提交：</p>
+<p>一个事务提交后，它做的变更才能被别的事务看到。
+* 可重复读：</p>
+<p>一个事务执行过程中看到的数据总是和事务启动时看到的数据是一致的。在这个级别下事务未提交，做出的变更其它事务也看不到。
+* 串行化：</p>
+<p>对于同一行记录进行读写会分别加读写锁，当发生读写锁冲突，后面执行的事务需等前面执行的事务完成才能继续执行。</p>
+</blockquote>
+<h2 id="mvcc">什么是MVCC？<a class="headerlink" href="#mvcc" title="Permanent link">&para;</a></h2>
+<p>MVCC为多版本并发控制，即同一条记录在系统中存在多个版本。其存在目的是在保证数据一致性的前提下提供一种高并发的访问性能。对数据读写在不加读写锁的情况下实现互不干扰,从而实现数据库的隔离性,在事务隔离级别为读提交和可重复读中使用到。</p>
+<p>在InnoDB中，事务在开始前会向事务系统申请一个事务ID，该ID是按申请顺序严格递增的。每行数据具有多个版本，每次事务更新数据都会生成新的数据版本，而不会直接覆盖旧的数据版本。数据的行结构中包含多个信息字段。其中实现MVCC的主要涉及最近更改该行数据的事务ID（DB_TRX_ID）和可以找到历史数据版本的指针（DB_ROLL_PTR）。InnoDB在每个事务开启瞬间会为其构造一个记录当前已经开启但未提交的事务ID的视图数组。通过比较链表中的事务ID与该行数据的值与对应的DB_TRX_ID，并通过DB_ROLL_PTR找到历史数据的值以及对应的DB_TRX_ID来决定当前版本的数据是否应该被当前事务所见。最终实现在不加锁的情况下保证数据的一致性。</p>
+<h2 id="mvcc_1">读提交和可重复读都基于MVCC实现，有什么区别？<a class="headerlink" href="#mvcc_1" title="Permanent link">&para;</a></h2>
+<p>在可重复读级别下，只会在事务开始前创建视图，事务中后续的查询共用一个视图。而读提交级别下每个语句执行前都会创建新的视图。因此对于可重复读，查询只能看到事务创建前就已经提交的数据。而对于读提交，查询能看到每个语句启动前已经提交的数据。</p>
+<h2 id="innodb_1">InnoDB如何保证事务的原子性、持久性和一致性？<a class="headerlink" href="#innodb_1" title="Permanent link">&para;</a></h2>
+<p>利用undo log保障原子性。该log保存了事务发生之前的数据的一个版本，可以用于回滚，从而保证事务原子性。</p>
+<p>利用redo log保证事务的持久性，该log关注于事务的恢复.在重启mysql服务的时候，根据redo log进行重做，从而使事务有持久性。</p>
+<p>利用undo log+redo log保障一致性。事务中的执行需要redo log，如果执行失败，需要undo log 回滚。</p>
+<h2 id="mysql_5">MySQL是如何保证主备一致的？<a class="headerlink" href="#mysql_5" title="Permanent link">&para;</a></h2>
+<p>MySQL通过binlog（二进制日志）实现主备一致。binlog记录了所有修改了数据库或可能修改数据库的语句，而不会记录select、show这种不会修改数据库的语句。在备份的过程中，主库A会有一个专门的线程将主库A的binlog发送给
+备库B进行备份。其中binlog有三种记录格式：
+1. statement:记录对数据库进行修改的语句本身，有可能会记录一些额外的相关信息。优点是binlog日志量少，IO压力小，性能较高。缺点是由于记录的信息相对较少，在不同库执行时由于上下文的环境不同可能导致主备不一致。
+2. row:记录对数据库做出修改的语句所影响到的数据行以及对这些行的修改。比如当修改涉及多行数据，会把涉及的每行数据都记录到binlog。优点是能够完全的还原或者复制日志被记录时的操作。缺点是日志量占用空间较大，IO压力大，性能消耗较大。
+3. mixed:混合使用上述两种模式，一般的语句使用statment方式进行保存，如果遇到一些特殊的函数，则使用row模式进行记录。MySQL自己会判断这条SQL语句是否可能引起主备不一致，如果有可能，就用row格式，
+否则就用statement格式。但是在生产环境中，一般会使用row模式。</p>
+<h2 id="redo-logbinlog">redo log与binlog的区别？<a class="headerlink" href="#redo-logbinlog" title="Permanent link">&para;</a></h2>
+<ol>
+<li>redo log是InnoDB引擎特有的，只记录该引擎中表的修改记录。binlog是MySQL的Server层实现的，会记录所有引擎对数据库的修改。</li>
+<li>redo log是物理日志，记录的是在具体某个数据页上做了什么修改；binlog是逻辑日志，记录的是这个语句的原始逻辑。</li>
+<li>redo log是循环写的，空间固定会用完；binlog是可以追加写入的，binlog文件写到一定大小后会切换到下一个，并不会覆盖以前的日志。</li>
+</ol>
+<h2 id="crash-safe">crash-safe能力是什么？<a class="headerlink" href="#crash-safe" title="Permanent link">&para;</a></h2>
+<p>InnoDB通过redo log保证即使数据库发生异常重启，之前提交的记录都不会丢失，这个能力称为crash-safe。</p>
+<h2 id="wal">WAL技术是什么？<a class="headerlink" href="#wal" title="Permanent link">&para;</a></h2>
+<p>WAL的全称是Write-Ahead Logging，它的关键点就是先写日志，再写磁盘。事务在提交写入磁盘前，会先写到redo log里面去。如果直接写入磁盘涉及磁盘的随机I/O访问，涉及磁盘随机I/O访问是非常消耗时间的一个过程，相比之下先写入redo log，后面再找合适的时机批量刷盘能提升性能。</p>
+<h2 id="_14">两阶段提交是什么？<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>为了保证binlog和redo log两份日志的逻辑一致，最终保证恢复到主备数据库的数据是一致的，采用两阶段提交的机制。
+1. 执行器调用存储引擎接口，存储引擎将修改更新到内存中后，将修改操作记录redo log中，此时redo log处于prepare状态。
+2. 存储引擎告知执行器执行完毕，执行器生成这个操作对应的binlog，并把binlog写入磁盘。
+3. 执行器调用引擎的提交事务接口，引擎把刚刚写入的redo log改成提交commit状态，更新完成。</p>
+<h2 id="binlog">只靠binlog可以支持数据库崩溃恢复吗？<a class="headerlink" href="#binlog" title="Permanent link">&para;</a></h2>
+<p>不可以。
+历史原因：
+1. InnoDB在作为MySQL的插件加入MySQL引擎家族之前，就已经是一个提供了崩溃恢复和事务支持的引擎了。InnoDB接入了MySQL后，发现既然binlog没有崩溃恢复的能力，那引入InnoDB原有的redo log来保证崩溃恢复能力。
+实现原因：
+2. binlog没有记录数据页修改的详细信息，不具备恢复数据页的能力。binlog记录着数据行的增删改，但是不记录事务对数据页的改动，这样细致的改动只记录在redo log中。当一个事务做增删改时，其实涉及到的数据页改动非常细致和复杂，包括行的字段改动以及行头部以及数据页头部的改动，甚至b+tree会因为插入一行而发生若干次页面分裂，那么事务也会把所有这些改动记录下来到redo log中。因为数据库系统进程crash时刻，磁盘上面页面镜像可以非常混乱，其中有些页面含有一些正在运行着的事务的改动，而一些已提交的事务的改动并没有刷上磁盘。事务恢复过程可以理解为是要把没有提交的事务的页面改动都去掉，并把已经提交的事务的页面改动都加上去这样一个过程。这些信息，都是binlog中没有记录的，只记录在了存储引擎的redo log中。
+3. 操作写入binlog可细分为write和fsync两个过程，write指的就是指把日志写入到文件系统的page cache，并没有把数据持久化到磁盘,fsync才是将数据持久化到磁盘的操作。通过参数设置sync_binlog为0的时候，表示每次提交事务都只write，不fsync。此时数据库崩溃可能导致部分提交的事务以及binlog日志由于没有持久化而丢失。</p>
+<h2 id="mysql_6">简述MySQL主从复制<a class="headerlink" href="#mysql_6" title="Permanent link">&para;</a></h2>
+<p>MySQL提供主从复制功能，可以方便的实现数据的多处自动备份，不仅能增加数据库的安全性，还能进行读写分离，提升数据库负载性能。</p>
+<p>主从复制流程：
+1. 在事务完成之前，主库在binlog上记录这些改变，完成binlog写入过程后，主库通知存储引擎提交事物
+2. 从库将主库的binlog复制到对应的中继日志，即开辟一个I/O工作线程，I/O线程在主库上打开一个普通的连接，然后开始binlog dump process，将这些事件写入中继日志。从主库的binlog中读取事件，如果已经读到最新了，线程进入睡眠并等待ma主库产生新的事件。</p>
+<p>读写分离：即只在MySQL主库上写，只在MySQL从库上读，以减少数据库压力，提高性能。</p>
+                
+              
+              
+                
+
+
+  <h2 id="__comments">评论</h2>
+  <div id="disqus_thread"></div>
+  <script>var disqus_config=function(){this.page.url="https://jlwy.ml/interview/%E6%95%B0%E6%8D%AE%E5%BA%93/",this.page.identifier="/interview/%E6%95%B0%E6%8D%AE%E5%BA%93/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//wybi-ji.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 WY
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="github.com/wangyin77/" target="_blank" rel="noopener" title="" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.instant", "toc.integrate"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.34eae1b6.min.js"></script>
+      
+        <script src="../../search/main.js"></script>
+      
+    
+  </body>
+</html>

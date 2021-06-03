@@ -1,0 +1,1574 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="wy的个人博客">
+      
+      
+      
+        <meta name="author" content="wy">
+      
+      
+        <link rel="canonical" href="https://jlwy.ml/interview/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
+    
+    
+      
+        <title>计算机网络 - 心水 - wy 笔记</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.875de78c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#00bdd6">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CInconsolata&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Inconsolata"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#osi" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="心水 - wy 笔记" class="md-header__button md-logo" aria-label="心水 - wy 笔记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.38 2-5 5-1.25 8.75L11.38 22l7.5-5-5-5 3.75-3.75L11.38 2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            心水 - wy 笔记
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              计算机网络
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/wangyin77/wangyin77.github.io/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wangyin77/wangyin77.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../basic/basic_algorithm/" class="md-tabs__link">
+        Basic
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../lc/Leetcode_5637/" class="md-tabs__link">
+        Leetcode
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../blog/WSL2/" class="md-tabs__link">
+        Blog
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="md-tabs__link md-tabs__link--active">
+        Interview
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="心水 - wy 笔记" class="md-nav__button md-logo" aria-label="心水 - wy 笔记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.38 2-5 5-1.25 8.75L11.38 22l7.5-5-5-5 3.75-3.75L11.38 2z"/></svg>
+
+    </a>
+    心水 - wy 笔记
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/wangyin77/wangyin77.github.io/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wangyin77/wangyin77.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Basic
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Basic" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Basic
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/basic_algorithm/" class="md-nav__link">
+        第一讲 基础算法
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/data%20structure/" class="md-nav__link">
+        第二讲 数据结构
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/search/" class="md-nav__link">
+        第三讲 搜索与图论
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Leetcode
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Leetcode" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Leetcode
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" data-md-state="indeterminate" type="checkbox" id="__nav_3_1" checked>
+      
+      <label class="md-nav__link" for="__nav_3_1">
+        周赛
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="周赛" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          周赛
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_1" data-md-state="indeterminate" type="checkbox" id="__nav_3_1_1" checked>
+      
+      <label class="md-nav__link" for="__nav_3_1_1">
+        221周
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="221周" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          221周
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_5637/" class="md-nav__link">
+        Leetcode_5637. 判断字符串的两半是否相似
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_5638/" class="md-nav__link">
+        Leetcode_5638. 吃苹果的最大数目
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_5210/" class="md-nav__link">
+        Leetcode_5210. 球会落何处
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_5640/" class="md-nav__link">
+        Leetcode_5640. 与数组中元素的最大异或值
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_2" data-md-state="indeterminate" type="checkbox" id="__nav_3_1_2" checked>
+      
+      <label class="md-nav__link" for="__nav_3_1_2">
+        222周
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="222周" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          222周
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_1710/" class="md-nav__link">
+        Leetcode_1710. 卡车上的最大单元数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_1711/" class="md-nav__link">
+        Leetcode_1711. 大餐计数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_1712/" class="md-nav__link">
+        Leetcode_1712. 将数组分成三个子数组的方案数
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" data-md-state="indeterminate" type="checkbox" id="__nav_3_2" checked>
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        顺序
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="顺序" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          顺序
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_1/" class="md-nav__link">
+        Leetcode_1. 两数之和
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_2/" class="md-nav__link">
+        Leetcode_2. 两数相加
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_3/" class="md-nav__link">
+        Leetcode_3. 无重复字符的最长子串
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_4/" class="md-nav__link">
+        Leetcode_4. 寻找两个正序数组的中位数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_5/" class="md-nav__link">
+        Leetcode_5. 最长回文子串
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_6/" class="md-nav__link">
+        Leetcode_6. Z 字形变换
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_7/" class="md-nav__link">
+        Leetcode_7. 整数反转
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_8/" class="md-nav__link">
+        Leetcode_8. 字符串转换整数 (atoi)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_9/" class="md-nav__link">
+        Leetcode_9. 回文数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_10/" class="md-nav__link">
+        Leetcode_10. 正则表达式匹配
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_31/" class="md-nav__link">
+        Leetcode_31. 下一个排列
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_32/" class="md-nav__link">
+        Leetcode_32. 最长有效括号
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_33/" class="md-nav__link">
+        Leetcode_33. 搜索旋转排序数组
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_34/" class="md-nav__link">
+        Leetcode_34. 在排序数组中查找元素的第一个和最后一个位置
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_35/" class="md-nav__link">
+        Leetcode_35. 搜索插入位置
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_36/" class="md-nav__link">
+        Leetcode_36. 有效的数独
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_37/" class="md-nav__link">
+        Leetcode_37. 解数独
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_38/" class="md-nav__link">
+        Leetcode_38. 外观数列
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_39/" class="md-nav__link">
+        Leetcode_39. 组合总和
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/Leetcode_40/" class="md-nav__link">
+        Leetcode_40. 组合总和 II
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Blog
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/WSL2/" class="md-nav__link">
+        WSL2 踩坑全记录
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/Autoware/" class="md-nav__link">
+        Autoware 安装流程记录
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Interview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Interview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Interview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="md-nav__link">
+        设计模式
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        数据结构
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        操作系统
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          计算机网络
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        计算机网络
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#osi" class="md-nav__link">
+    简述OSI七层协议
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcpip" class="md-nav__link">
+    简述TCP/IP五层协议
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    物理层有什么作用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    数据链路层有什么作用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    网络层有什么作用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    传输层有什么作用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    会话层有什么作用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    表示层有什么作用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    应用层有什么作用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcpudp" class="md-nav__link">
+    TCP与UDP区别
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp" class="md-nav__link">
+    为何TCP可靠
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#udp" class="md-nav__link">
+    为何UDP不可靠
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp_1" class="md-nav__link">
+    简述TCP粘包现象
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp_2" class="md-nav__link">
+    TCP粘包现象处理方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp_3" class="md-nav__link">
+    简述TCP协议的滑动窗口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp_4" class="md-nav__link">
+    简述TCP协议的拥塞控制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    简述快重传
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp_5" class="md-nav__link">
+    TCP三次握手过程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp_6" class="md-nav__link">
+    为什么TCP握手需要三次，两次行不行？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    简述半连接队列
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syn" class="md-nav__link">
+    简述SYN攻击
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp_7" class="md-nav__link">
+    TCP四次挥手过程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp4" class="md-nav__link">
+    为什么TCP挥手需要4次
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2msl" class="md-nav__link">
+    为什么四次挥手释放连接时需要等待2MSL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    简述DNS协议
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns_1" class="md-nav__link">
+    简述DNS解析过程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    简述HTTP协议
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cookie" class="md-nav__link">
+    简述cookie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session" class="md-nav__link">
+    简述session
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http_1" class="md-nav__link">
+    简述http状态码和对应的信息
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    转发和重定向的区别
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http10" class="md-nav__link">
+    简述http1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http11" class="md-nav__link">
+    简述http1.1的改进
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http_2" class="md-nav__link">
+    简述HTTP短连接与长连接区别
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http20" class="md-nav__link">
+    简述http2.0的改进
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#httphttps" class="md-nav__link">
+    http与https的区别
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tlsssl-http-https" class="md-nav__link">
+    简述TLS/SSL, HTTP, HTTPS的关系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#https" class="md-nav__link">
+    https的连接过程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getpost" class="md-nav__link">
+    Get与Post区别
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    Get方法参数有大小限制吗
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    了解REST API吗
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    浏览器中输入一个网址后，具体发生了什么
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/wangyin77/wangyin77.github.io/blob/master/docs/interview/计算机网络.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>计算机网络</h1>
+                
+                <h2 id="osi">简述OSI七层协议<a class="headerlink" href="#osi" title="Permanent link">&para;</a></h2>
+<p>OSI七层协议包括：物理层，数据链路层，网络层，运输层，会话层，表示层， 应用层</p>
+<h2 id="tcpip">简述TCP/IP五层协议<a class="headerlink" href="#tcpip" title="Permanent link">&para;</a></h2>
+<p>TCP/IP五层协议包括：物理层，数据链路层，网络层，运输层，应用层</p>
+<h2 id="_1">物理层有什么作用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>主要解决两台物理机之间的通信，通过二进制比特流的传输来实现，二进制数据表现为电流电压上的强弱，到达目的地再转化为二进制机器码。网卡、集线器工作在这一层。</p>
+<h2 id="_2">数据链路层有什么作用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>在不可靠的物理介质上提供可靠的传输，接收来自物理层的位流形式的数据，并封装成帧，传送到上一层；同样，也将来自上层的数据帧，拆装为位流形式的数据转发到物理层。这一层在物理层提供的比特流的基础上，通过差错控制、流量控制方法，使有差错的物理线路变为无差错的数据链路。提供物理地址寻址功能。交换机工作在这一层。</p>
+<h2 id="_3">网络层有什么作用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>将网络地址翻译成对应的物理地址，并决定如何将数据从发送方路由到接收方，通过路由选择算法为分组通过通信子网选择最佳路径。路由器工作在这一层。</p>
+<h2 id="_4">传输层有什么作用<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>传输层提供了进程间的逻辑通信，传输层向高层用户屏蔽了下面网络层的核心细节，使应用程序看起来像是在两个传输层实体之间有一条端到端的逻辑通信信道。</p>
+<h2 id="_5">会话层有什么作用<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>建立会话：身份验证，权限鉴定等；
+保持会话：对该会话进行维护，在会话维持期间两者可以随时使用这条会话传输局；
+断开会话：当应用程序或应用层规定的超时时间到期后，OSI会话层才会释放这条会话。</p>
+<h2 id="_6">表示层有什么作用<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>对数据格式进行编译，对收到或发出的数据根据应用层的特征进行处理，如处理为文字、图片、音频、视频、文档等，还可以对压缩文件进行解压缩、对加密文件进行解密等。</p>
+<h2 id="_7">应用层有什么作用<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>提供应用层协议，如HTTP协议，FTP协议等等，方便应用程序之间进行通信。</p>
+<h2 id="tcpudp">TCP与UDP区别<a class="headerlink" href="#tcpudp" title="Permanent link">&para;</a></h2>
+<p>TCP作为面向流的协议，提供可靠的、面向连接的运输服务，并且提供点对点通信
+UDP作为面向报文的协议，不提供可靠交付，并且不需要连接，不仅仅对点对点，也支持多播和广播</p>
+<h2 id="tcp">为何TCP可靠<a class="headerlink" href="#tcp" title="Permanent link">&para;</a></h2>
+<p>TCP有三次握手建立连接，四次挥手关闭连接的机制。
+除此之外还有滑动窗口和拥塞控制算法。最最关键的是还保留超时重传的机制。
+对于每份报文也存在校验，保证每份报文可靠性。</p>
+<h2 id="udp">为何UDP不可靠<a class="headerlink" href="#udp" title="Permanent link">&para;</a></h2>
+<p>UDP面向数据报无连接的，数据报发出去，就不保留数据备份了。
+仅仅在IP数据报头部加入校验和复用。
+UDP没有服务器和客户端的概念。
+UDP报文过长的话是交给IP切成小段，如果某段报废报文就废了。</p>
+<h2 id="tcp_1">简述TCP粘包现象<a class="headerlink" href="#tcp_1" title="Permanent link">&para;</a></h2>
+<p>TCP是面向流协议，发送的单位是字节流，因此会将多个小尺寸数据被封装在一个tcp报文中发出去的可能性。
+可以简单的理解成客户端调用了两次send，服务器端一个recv就把信息都读出来了。</p>
+<h2 id="tcp_2">TCP粘包现象处理方法<a class="headerlink" href="#tcp_2" title="Permanent link">&para;</a></h2>
+<p>固定发送信息长度，或在两个信息之间加入分隔符。</p>
+<h2 id="tcp_3">简述TCP协议的滑动窗口<a class="headerlink" href="#tcp_3" title="Permanent link">&para;</a></h2>
+<p>滑动窗口是传输层进行流量控制的一种措施，接收方通过通告发
+送方自己的窗口大小，从而控制发送方的发送速度，防止发送方发送速度过快而导致自己被淹没。</p>
+<h2 id="tcp_4">简述TCP协议的拥塞控制<a class="headerlink" href="#tcp_4" title="Permanent link">&para;</a></h2>
+<p>拥塞是指一个或者多个交换点的数据报超载，TCP又会有重传机制，导致过载。
+为了防止拥塞窗口cwnd增长过大引起网络拥塞，还需要设置一个慢开始门限ssthresh状态变量.</p>
+<p>当cwnd &lt; ssthresh 时，使用慢开始算法。
+当cwnd &gt; ssthresh 时，停止使用慢开始算法而改用拥塞避免算法。
+当cwnd = ssthresh 时，即可使用慢开始算法，也可使用拥塞避免算法。</p>
+<p>慢开始：由小到大逐渐增加拥塞窗口的大小，每接一次报文，cwnd指数增加。</p>
+<p>拥塞避免：cwnd缓慢地增大，即每经过一个往返时间RTT就把发送方的拥塞窗口cwnd加1。</p>
+<p>快恢复之前的策略：发送方判断网络出现拥塞，就把ssthresh设置为出现拥塞时发送方窗口值的一半，继续执行慢开始，之后进行拥塞避免。</p>
+<p>快恢复：发送方判断网络出现拥塞，就把ssthresh设置为出现拥塞时发送方窗口值的一半，并把cwnd设置为ssthresh的一半，之后进行拥塞避免。</p>
+<h2 id="_8">简述快重传<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>如果在超时重传定时器溢出之前，接收到连续的三个重复冗余ACK，发送端便知晓哪个报文段在传输过程中丢失了，于是重发该报文段，不需要等待超时重传定时器溢出再发送该报文。</p>
+<h2 id="tcp_5">TCP三次握手过程<a class="headerlink" href="#tcp_5" title="Permanent link">&para;</a></h2>
+<ol>
+<li>第一次握手:客户端将标志位SYN置为1，随机产生一个值序列号seq=x，并将该数据包发送给服务端，客户端
+进入syn_sent状态，等待服务端确认。</li>
+<li>第二次握手:服务端收到数据包后由标志位SYN=1知道客户端请求建立连接，服务端将标志位SYN和
+ACK都置为1，ack=x+1,随机产生一个值seq=y，并将该数据包发送给客户端以确认连接请求，服务端进入syn_rcvd状态。</li>
+<li>第三次握手:客户端收到确认后检查,如果正确则将标志位ACK为1，ack=y+1，并将该数据包发送给服务端，服务端进行检查如果正确则连接建立成功，客户端和服务端进入established状态，完成三次握手，随后客户端和服务端之间可以开始传输
+数据了</li>
+</ol>
+<h2 id="tcp_6">为什么TCP握手需要三次，两次行不行？<a class="headerlink" href="#tcp_6" title="Permanent link">&para;</a></h2>
+<p>不行。TCP进行可靠传输的关键就在于维护一个序列号，三次握手的过程即是通信双方相互告知序列号起始值， 并确认对方已经收到了序列号起始值。</p>
+<p>如果只是两次握手， 至多只有客户端的起始序列号能被确认， 服务器端的序列号则得不到确认。</p>
+<h2 id="_9">简述半连接队列<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>TCP握手中，当服务器处于SYN_RCVD 状态，服务器会把此种状态下请求连接放在一个队列里，该队列称为半连接队列。</p>
+<h2 id="syn">简述SYN攻击<a class="headerlink" href="#syn" title="Permanent link">&para;</a></h2>
+<p>SYN攻击即利用TCP协议缺陷，通过发送大量的半连接请求，占用半连接队列，耗费CPU和内存资源。</p>
+<p>优化方式：
+1. 缩短SYN Timeout时间 
+2. 记录IP，若连续受到某个IP的重复SYN报文，从这个IP地址来的包会被一概丢弃。</p>
+<h2 id="tcp_7">TCP四次挥手过程<a class="headerlink" href="#tcp_7" title="Permanent link">&para;</a></h2>
+<ol>
+<li>第一次挥手：客户端发送一个FIN，用来关闭客户端到服务端的数据传送，客户端进入fin_wait_1状态。</li>
+<li>第二次挥手：服务端收到FIN后，发送一个ACK给客户端，确认序号为收到序号+1，服务端进入Close_wait状态。此时TCP连接处于半关闭状态，即客户端已经没有要发送的数据了，但服务端若发送数据，则客户端仍要接收。</li>
+<li>第三次挥手：服务端发送一个FIN，用来关闭服务端到客户端的数据传送，服务端进入Last_ack状态。</li>
+<li>第四次挥手：客户端收到FIN后，客户端进入Time_wait状态，接着发送一个ACK给服务端，确认后，服务端进入Closed状态，完成四次挥手。</li>
+</ol>
+<h2 id="tcp4">为什么TCP挥手需要4次<a class="headerlink" href="#tcp4" title="Permanent link">&para;</a></h2>
+<p>主要原因是当服务端收到客户端的 FIN 数据包后，服务端可能还有数据没发完，不会立即close。</p>
+<p>所以服务端会先将 ACK 发过去告诉客户端我收到你的断开请求了，但请再给我一点时间，这段时间用来发送剩下的数据报文，发完之后再将 FIN 包发给客户端表示现在可以断了。之后客户端需要收到 FIN 包后发送 ACK 确认断开信息给服务端。</p>
+<h2 id="2msl">为什么四次挥手释放连接时需要等待2MSL<a class="headerlink" href="#2msl" title="Permanent link">&para;</a></h2>
+<p>MSL即报文最大生存时间。设置2MSL可以保证上一次连接的报文已经在网络中消失，不会出现与新TCP连接报文冲突的情况。</p>
+<h2 id="dns">简述DNS协议<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h2>
+<p>DNS协议是基于UDP的应用层协议，它的功能是根据用户输入的域名，解析出该域名对应的IP地址，从而给客户端进行访问。</p>
+<h2 id="dns_1">简述DNS解析过程<a class="headerlink" href="#dns_1" title="Permanent link">&para;</a></h2>
+<p>1、客户机发出查询请求，在本地计算机缓存查找，若没有找到，就会将请求发送给dns服务器</p>
+<p>2、本地dns服务器会在自己的区域里面查找，找到即根据此记录进行解析，若没有找到，就会在本地的缓存里面查找</p>
+<p>3、本地服务器没有找到客户机查询的信息，就会将此请求发送到根域名dns服务器</p>
+<p>4、根域名服务器解析客户机请求的根域部分，它把包含的下一级的dns服务器的地址返回到客户机的dns服务器地址</p>
+<p>5、客户机的dns服务器根据返回的信息接着访问下一级的dns服务器</p>
+<p>6、这样递归的方法一级一级接近查询的目标，最后在有目标域名的服务器上面得到相应的IP信息</p>
+<p>7、客户机的本地的dns服务器会将查询结果返回给我们的客户机</p>
+<p>8、客户机根据得到的ip信息访问目标主机，完成解析过程</p>
+<h2 id="http">简述HTTP协议<a class="headerlink" href="#http" title="Permanent link">&para;</a></h2>
+<p>http协议是超文本传输协议。它是基于TCP协议的应用层传输协议，即客户端和服务端进行数据传输的一种规则。该协议本身HTTP 是一种无状态的协议。</p>
+<h2 id="cookie">简述cookie<a class="headerlink" href="#cookie" title="Permanent link">&para;</a></h2>
+<p>HTTP 协议本身是无状态的，为了使其能处理更加复杂的逻辑，HTTP/1.1 引入 Cookie 来保存状态信息。</p>
+<p>Cookie是由服务端产生的，再发送给客户端保存，当客户端再次访问的时候，服务器可根据cookie辨识客户端是哪个，以此可以做个性化推送，免账号密码登录等等。</p>
+<h2 id="session">简述session<a class="headerlink" href="#session" title="Permanent link">&para;</a></h2>
+<p>session用于标记特定客户端信息，存在在服务器的一个文件里。
+一般客户端带Cookie对服务器进行访问，可通过cookie中的session id从整个session中查询到服务器记录的关于客户端的信息。</p>
+<h2 id="http_1">简述http状态码和对应的信息<a class="headerlink" href="#http_1" title="Permanent link">&para;</a></h2>
+<p>1XX：接收的信息正在处理</p>
+<p>2XX：请求正常处理完毕</p>
+<p>3XX：重定向</p>
+<p>4XX：客户端错误</p>
+<p>5XX：服务端错误</p>
+<p>常见错误码：
+301：永久重定向
+302：临时重定向
+304：资源没修改，用之前缓存就行
+400：客户端请求的报文有错误
+403：表示服务器禁止访问资源
+404：表示请求的资源在服务器上不存在或未找到</p>
+<h2 id="_10">转发和重定向的区别<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>转发是服务器行为。服务器直接向目标地址访问URL,将相应内容读取之后发给浏览器，用户浏览器地址栏URL不变，转发页面和转发到的页面可以共享request里面的数据。</p>
+<p>重定向是利用服务器返回的状态码来实现的，如果服务器返回301或者302，浏览器收到新的消息后自动跳转到新的网址重新请求资源。用户的地址栏url会发生改变，而且不能共享数据。</p>
+<h2 id="http10">简述http1.0<a class="headerlink" href="#http10" title="Permanent link">&para;</a></h2>
+<p>规定了请求头和请求尾，响应头和响应尾（get post）</p>
+<p>每一个请求都是一个单独的连接，做不到连接的复用</p>
+<h2 id="http11">简述http1.1的改进<a class="headerlink" href="#http11" title="Permanent link">&para;</a></h2>
+<p>HTTP1.1默认开启长连接，在一个TCP连接上可以传送多个HTTP请求和响应。使用 TCP 长连接的方式改善了 HTTP/1.0 短连接造成的性能开销。</p>
+<p>支持管道（pipeline）网络传输，只要第一个请求发出去了，不必等其回来，就可以发第二个请求出去，可以减少整体的响应时间。</p>
+<p>服务端无法主动push</p>
+<h2 id="http_2">简述HTTP短连接与长连接区别<a class="headerlink" href="#http_2" title="Permanent link">&para;</a></h2>
+<p>HTTP中的长连接短连接指HTTP底层TCP的连接。</p>
+<p>短连接： 客户端与服务器进行一次HTTP连接操作，就进行一次TCP连接，连接结束TCP关闭连接。</p>
+<p>长连接：如果HTTP头部带有参数keep-alive，即开启长连接网页完成打开后，底层用于传输数据的TCP连接不会直接关闭，会根据服务器设置的保持时间保持连接，保持时间过后连接关闭。</p>
+<h2 id="http20">简述http2.0的改进<a class="headerlink" href="#http20" title="Permanent link">&para;</a></h2>
+<p>提出多路复用。多路复用前，文件时串行传输的，请求a文件，b文件只能等待，并且连接数过多。引入多路复用，a文件b文件可以同时传输。</p>
+<p>引入了二进制数据帧。其中帧对数据进行顺序标识，有了序列id，服务器就可以进行并行传输数据。</p>
+<h2 id="httphttps">http与https的区别<a class="headerlink" href="#httphttps" title="Permanent link">&para;</a></h2>
+<p>http所有传输的内容都是明文，并且客户端和服务器端都无法验证对方的身份。
+https具有安全性的ssl加密传输协议，加密采用对称加密，
+https协议需要到ca申请证书，一般免费证书很少，需要交费。</p>
+<h2 id="tlsssl-http-https">简述TLS/SSL, HTTP, HTTPS的关系<a class="headerlink" href="#tlsssl-http-https" title="Permanent link">&para;</a></h2>
+<p>SSL全称为Secure Sockets Layer即安全套接层，其继任为TLSTransport Layer Security传输层安全协议，均用于在传输层为数据通讯提供安全支持。</p>
+<p>可以将HTTPS协议简单理解为HTTP协议＋TLS/SSL</p>
+<h2 id="https">https的连接过程<a class="headerlink" href="#https" title="Permanent link">&para;</a></h2>
+<ol>
+<li>浏览器将支持的加密算法信息发给服务器</li>
+<li>服务器选择一套浏览器支持的加密算法，以证书的形式回发给浏览器</li>
+<li>客户端(SSL/TLS)解析证书验证证书合法性，生成对称加密的密钥，我们将该密钥称之为client key，即客户端密钥，用服务器的公钥对客户端密钥进行非对称加密。</li>
+<li>客户端会发起HTTPS中的第二个HTTP请求，将加密之后的客户端对称密钥发送给服务器</li>
+<li>服务器接收到客户端发来的密文之后，会用自己的私钥对其进行非对称解密，解密之后的明文就是客户端密钥，然后用客户端密钥对数据进行对称加密，这样数据就变成了密文。</li>
+<li>服务器将加密后的密文发送给客户端</li>
+<li>客户端收到服务器发送来的密文，用客户端密钥对其进行对称解密，得到服务器发送的数据。这样HTTPS中的第二个HTTP请求结束，整个HTTPS传输完成</li>
+</ol>
+<h2 id="getpost">Get与Post区别<a class="headerlink" href="#getpost" title="Permanent link">&para;</a></h2>
+<p>Get：指定资源请求数据，刷新无害，Get请求的数据会附加到URL中，传输数据的大小受到url的限制。</p>
+<p>Post：向指定资源提交要被处理的数据。刷新会使数据会被重复提交。post在发送数据前会先将请求头发送给服务器进行确认，然后才真正发送数据。</p>
+<h2 id="get">Get方法参数有大小限制吗<a class="headerlink" href="#get" title="Permanent link">&para;</a></h2>
+<p>一般HTTP协议里并不限制参数大小限制。但一般由于get请求是直接附加到地址栏里面的，由于浏览器地址栏有长度限制，因此使GET请求在浏览器实现层面上看会有长度限制。</p>
+<h2 id="rest-api">了解REST API吗<a class="headerlink" href="#rest-api" title="Permanent link">&para;</a></h2>
+<p>REST API全称为表述性状态转移（Representational State Transfer，REST）即利用HTTP中get、post、put、delete以及其他的HTTP方法构成REST中数据资源的增删改查操作：
+- Create ： POST
+- Read ： GET
+- Update ： PUT/PATCH
+- Delete： DELETE</p>
+<h2 id="_11">浏览器中输入一个网址后，具体发生了什么<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<ol>
+<li>进行DNS解析操作，根据DNS解析的结果查到服务器IP地址</li>
+<li>通过ip寻址和arp，找到服务器，并利用三次握手建立TCP连接</li>
+<li>浏览器生成HTTP报文，发送HTTP请求，等待服务器响应</li>
+<li>服务器处理请求，并返回给浏览器</li>
+<li>根据HTTP是否开启长连接，进行TCP的挥手过程</li>
+<li>浏览器根据收到的静态资源进行页面渲染</li>
+</ol>
+                
+              
+              
+                
+
+
+  <h2 id="__comments">评论</h2>
+  <div id="disqus_thread"></div>
+  <script>var disqus_config=function(){this.page.url="https://jlwy.ml/interview/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/",this.page.identifier="/interview/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//wybi-ji.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              操作系统
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 WY
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="github.com/wangyin77/" target="_blank" rel="noopener" title="" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.instant", "toc.integrate"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.34eae1b6.min.js"></script>
+      
+        <script src="../../search/main.js"></script>
+      
+    
+  </body>
+</html>
