@@ -55,6 +55,13 @@ nav:
   - Blog:
     - WSL2 踩坑全记录: blog/WSL2.md
     - Autoware 安装流程记录: blog/Autoware.md
+
+  - Interview:
+    - 设计模式: interview/设计模式.md
+    - 数据结构: interview/数据结构与算法.md
+    - 操作系统: interview/操作系统.md
+    - 计算机网络: interview/计算机网络.md
+    
 # Theme
 theme:
   icon:
